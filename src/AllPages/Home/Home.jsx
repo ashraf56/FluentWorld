@@ -1,9 +1,10 @@
 import React from 'react';
+import Banner from '../HomeSlider/Banner';
 
 const Home = () => {
     return (
         <div>
-            this jdogg
+           <Banner></Banner>
         </div>
     );
 };
