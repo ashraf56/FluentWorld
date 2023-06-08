@@ -4,16 +4,16 @@ import Slider from './Slider/Slider';
 const Banner = () => {
     return (
         <div>
-<div className="hero min-h-screen bg-base-200">
+<div className="hero min-h-screen ">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className='w-8/12'>
             <Slider></Slider>
 
     </div>
     <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <h1 className="text-5xl font-bold uppercase leading-snug">Unlock the Power of Language with <span className='text-white bg-gray-950'>FluentWorld</span></h1>
+      <p className="py-6">Unlock Your Language Potential at FluentWorld: Learn, Connect, and Speak with Confidence!.Welcome to FluentWorld: Unlock Your Language Potential and Explore a World of Communication. </p>
+      <button className="btn  btn-neutral ">Explore now</button>
     </div>
   </div>
 </div>
