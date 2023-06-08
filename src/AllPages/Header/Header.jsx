@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -21,25 +22,22 @@ const Header = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className="btn btn-ghost  text-xl uppercase">FluentWorld</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li tabIndex={0}>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+      <li><Link>Home</Link> </li>
+      <li><Link>Instructors</Link> </li>
+      <li><Link>Classes</Link> </li>
+      <li><Link>Dashboard </Link> </li>
+
+      
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+   <div className="w-10 rounded-full">
+          <img src="https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&w=600" className='rounded-full' />
+        </div>
   </div>
 </div>
         </div>
