@@ -12,19 +12,19 @@ let [user,setuser]=useState()
 let [Loading,setLoading]=useState(true);
 
 let RandonUser=(email,password)=>{
-    setLodaer(true)
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
 }
 
 let googleSignin=()=>{
-    setLodaer(true)
+    setLoading(true)
     return signInWithPopup(auth, Googleprovider)
 }
 
-let updateUser=(name,img)=>{
+let updateUser=(name,photo)=>{
 
     return  updateProfile(auth.currentUser, {
-          displayName: name, photoURL: img
+          displayName: name, photoURL: photo
         })
   }
 
@@ -33,7 +33,7 @@ let updateUser=(name,img)=>{
 }
 
 let Login=(email,password)=>{
-    setLodaer(true)
+    setLoading(true)
      return signInWithEmailAndPassword(auth, email, password)
  }
 

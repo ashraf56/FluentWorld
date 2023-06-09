@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthService } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
+  let{user,Signout}=useContext(AuthService)
+
+let handleout=()=>{
+  Signout()
+  .then(() => {
+
+  }).catch((error) => {
+  });
+}
+
     return (
         <div className='max-w-screen-xl mx-auto'>
             <div className="navbar bg-base-100">
@@ -26,15 +37,15 @@ const Header = () => {
       <li><Link>Instructors</Link> </li>
       <li><Link>Classes</Link> </li>
       <li><Link>Dashboard </Link> </li>
-      <li><Link to='/login'>Login </Link> </li>
+      {user ?  <li><Link onClick={handleout}>LogOut</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 
       
     </ul>
   </div>
   <div className="navbar-end">
-   <div className="w-10 rounded-full">
-          <img src="https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&w=600" className='rounded-full' />
-        </div>
+   {user && <div className="w-10 rounded-full">
+          <img src={user.photoURL} className='rounded-full' />
+        </div>}
   </div>
 </div>
         </div>
