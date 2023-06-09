@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { FaRegEye ,FaRegEyeSlash} from "react-icons/fa";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
@@ -20,13 +20,18 @@ const Login = () => {
           <input type="text" placeholder="email" className="input input-bordered" />
         </div>
         <div className="form-control">
+        
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type={showPassword ? 'text' : 'password'} placeholder="password" className="input input-bordered" />
-          <span onClick={togglePasswordVisibility}>
-        {showPassword ? 'Hide' : 'Show'}
-      </span>
+          <div className="input-group">
+          <input type={showPassword ? 'text' : 'password'} placeholder="password" className="input input-bordered" 
+          />
+          <span className='bg-base' onClick={togglePasswordVisibility}>
+        {showPassword ?  <FaRegEyeSlash/>:<FaRegEye/>}
+      </span> 
+      </div>
+
           <label className="label">
            <a className="label-text-alt link link-hover">
             Don't have an account?
