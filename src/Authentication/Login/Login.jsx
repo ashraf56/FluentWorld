@@ -27,7 +27,7 @@ const Login = () => {
           <div className="input-group">
           <input type={showPassword ? 'text' : 'password'} placeholder="password" className="input input-bordered" 
           />
-          <span className='bg-base' onClick={togglePasswordVisibility}>
+          <span className='bg-white border ' onClick={togglePasswordVisibility}>
         {showPassword ?  <FaRegEyeSlash/>:<FaRegEye/>}
       </span> 
       </div>
