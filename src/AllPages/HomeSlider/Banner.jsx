@@ -11,7 +11,7 @@ const Banner = () => {
 
     </div>
     <div>
-      <h1 className="text-5xl font-bold uppercase leading-snug">Unlock the Power of Language with <span className='text-white bg-gray-950'>FluentWorld</span></h1>
+      <h1 className="text-4xl font-bold uppercase leading-snug">Unlock the Power of Language with <span className='text-white bg-gray-950'>FluentWorld</span></h1>
       <p className="py-6">Unlock Your Language Potential at FluentWorld: Learn, Connect, and Speak with Confidence!.Welcome to FluentWorld: Unlock Your Language Potential and Explore a World of Communication. </p>
       <button className="btn  btn-neutral ">Explore now</button>
     </div>
