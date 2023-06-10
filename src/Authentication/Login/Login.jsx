@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaRegEye ,FaRegEyeSlash} from "react-icons/fa";
 import { useForm } from 'react-hook-form';
 import { AuthService } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const togglePasswordVisibility = () => {
@@ -27,7 +28,26 @@ let social=()=>{
   .then((result) => {
 
     const user = result.user;
-console.log(user);
+    let info={name:user.displayName , email:user.email, photoURL:user.photoURL}
+
+    fetch('http://localhost:3000/alluser',{
+        method:"POST"
+        ,headers:{
+          'content-type': 'application/json'
+        },
+        body:JSON.stringify(info)
+      })
+      .then(r=> r.json()).then(data=> {
+        if (data.insertedId) {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;

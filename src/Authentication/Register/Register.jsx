@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { AuthService } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Register = () => {
   let [err,seterr]=useState('');
@@ -16,7 +17,25 @@ RandonUser(data.email,data.password)
   const user = userCredential.user;
  updateUser(data.displayName , data.photoURL)
  .then(() => {
-
+  let info={name:data.name , email:data.email , photoURL:data.photoURL}
+            fetch('http://localhost:3000/alluser',{
+              method:"POST"
+              ,headers:{
+                'content-type': 'application/json'
+              },
+              body:JSON.stringify(info)
+            })
+            .then(r=> r.json()).then(data=> {
+              if (data.insertedId) {
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'user Created',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+              }
+            })
 })
 console.log(user);
 seterr('')
