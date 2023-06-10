@@ -34,8 +34,8 @@ fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
 
     return (
         <div>
-            this is for all user
-            {users.length}
+          <h1 className='text-5xl font-bold text-center uppercase py-5' >Manage Role</h1>
+
 
             <div className="overflow-x-auto">
   <table className="table table-zebra">
@@ -64,10 +64,10 @@ fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
      </td>
     <td>{user.name}</td>
     <td>
-      { user.role=== 'admin' ? <button className='btn btn-xs' disabled>Make Admin</button>: <button className='btn btn-xs' onClick={()=> makeAdmin(user)} >Make Admin</button>}
+      { user?.role === 'admin'  ? <button className='btn btn-xs' disabled>Make Admin</button>: <button className='btn btn-xs' onClick={()=> makeAdmin(user)} >Make Admin</button>}
     </td>
     <td>
-      { user?.role=== 'instructor' ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}
+      { user?.role === 'instructor' || user.role=== 'admin' ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}
     </td>
    
   </tr>)

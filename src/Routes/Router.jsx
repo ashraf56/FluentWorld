@@ -6,6 +6,7 @@ import Register from "../Authentication/Register/Register";
 import Dashboard from "../Dashboard/Dashboard";
 import ManageUsers from "../Dashboard/Admin/ManageUsers";
 import ManageClasses from "../Dashboard/Admin/ManageClasses";
+import Instructors from "../AllPages/Instructors/Instructors";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,11 @@ element:<Login></Login>
 {
 path:'/signup',
 element:<Register></Register>
+
+},
+{
+path:'/instruc',
+element: <Instructors></Instructors>,
 
 },
 

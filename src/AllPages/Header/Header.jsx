@@ -52,7 +52,7 @@ useEffect(() => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
       <li><Link>Home</Link> </li>
-      <li><Link>Instructors</Link> </li>
+      <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link>Classes</Link> </li>
       {user && <li><Link to='dashboard/users'>Dashboard </Link> </li>}
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
