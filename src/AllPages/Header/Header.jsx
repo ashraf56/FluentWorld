@@ -43,9 +43,15 @@ let handleout=()=>{
     </ul>
   </div>
   <div className="navbar-end">
-   {user && <div className="w-10 rounded-full">
-          <img src={user.photoURL} className='rounded-full' />
-        </div>}
+  
+   {user && <div className="avatar">
+  <div className="w-10 rounded-full ring ring-slate-950 ring-offset-base-100 ring-offset-2">
+     <img src={user.photoURL} className='rounded-full' />
+  </div>
+</div>
+         
+        
+        }
   </div>
 </div>
         </div>
