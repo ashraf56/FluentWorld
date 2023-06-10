@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaRegEye ,FaRegEyeSlash} from "react-icons/fa";
 import { useForm } from 'react-hook-form';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  let navigate=useNavigate()
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -17,11 +18,13 @@ Login(data.email,data.password)
 .then((userCredential) => {
   const user = userCredential.user;
 console.log(user);
+navigate('/')
 })
 .catch((error) => {
   const errorCode = error.code;
   const errorMessage = error.message;
 });
+
 }
 let social=()=>{
   googleSignin()
@@ -42,11 +45,12 @@ let social=()=>{
           Swal.fire({
             position: 'top-end',
             icon: 'success',
-            title: 'Your work has been saved',
+            title: 'User created',
             showConfirmButton: false,
             timer: 1500
           })
         }
+        navigate('/')
       })
   }).catch((error) => {
     const errorCode = error.code;

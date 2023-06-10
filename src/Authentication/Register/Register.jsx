@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const Register = () => {
   let [err,seterr]=useState('');
 let {user,RandonUser,updateUser}=useContext(AuthService)
+let navigator=useNavigate();
   const { register, formState: { errors }, handleSubmit ,reset ,watch } = useForm();
   const onSubmit = data => {
 console.log(data);
@@ -17,7 +18,7 @@ RandonUser(data.email,data.password)
   const user = userCredential.user;
  updateUser(data.displayName , data.photoURL)
  .then(() => {
-  let info={name:data.name , email:data.email , photoURL:data.photoURL}
+  let info={name:data.displayName , email:data.email , photoURL:data.photoURL}
             fetch('http://localhost:3000/alluser',{
               method:"POST"
               ,headers:{
@@ -39,6 +40,7 @@ RandonUser(data.email,data.password)
 })
 console.log(user);
 seterr('')
+navigator('/')
 
 })
 .catch((error) => {

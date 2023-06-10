@@ -10,6 +10,28 @@ const ManageUsers = () => {
         return res.data
         
             })
+
+let makeAdmin=(alluser)=>{
+fetch(`http://localhost:3000/alluser/admin/${alluser._id}`,{
+  method:"PATCH"
+})
+.then(res=> res.json())
+.then(data=> {
+    console.log(data);
+    refetch()
+})
+}
+let makeInstructor=(alluser)=>{
+fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
+  method:"PATCH"
+})
+.then(res=> res.json())
+.then(data=> {
+    console.log(data);
+    refetch()
+})
+}
+
     return (
         <div>
             this is for all user
@@ -32,14 +54,22 @@ const ManageUsers = () => {
    {
     users.map((user,index)=>   <tr key={user._id}>
     <th>{index+1}</th>
-    <td><img src={user.photoURL} className='rounded-full w-8'  /></td>
+    <td>
+    <div className="avatar">
+  <div className="w-10 rounded-full">
+     <img src={user.photoURL}  />
+  </div>
+</div>
+      
+     </td>
     <td>{user.name}</td>
     <td>
-        <button className='btn btn-xs' >Make Admin</button>
+      { user.role=== 'admin' ? <button className='btn btn-xs' disabled>Make Admin</button>: <button className='btn btn-xs' onClick={()=> makeAdmin(user)} >Make Admin</button>}
     </td>
     <td>
-        <button className='btn btn-xs' >Make Instructor</button>
+      { user?.role=== 'instructor' ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}
     </td>
+   
   </tr>)
    }
      
