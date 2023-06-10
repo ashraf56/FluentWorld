@@ -71,7 +71,7 @@ useEffect(() => {
         
         }
 
-<button className="btn btn-square btn-ghost">
+<button className="btn btn-square btn-ghost mx-6">
           <label className="swap swap-rotate w-12 h-12">
             <input
               type="checkbox"
