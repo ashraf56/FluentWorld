@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthService } from '../../AuthProvider/AuthProvider';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Header = () => {
   let{user,Signout}=useContext(AuthService)
-
+  const [themes, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
 let handleout=()=>{
   Signout()
   .then(() => {
@@ -12,6 +15,22 @@ let handleout=()=>{
   }).catch((error) => {
   });
 }
+ 
+let sun='https://cdn-icons-png.flaticon.com/512/869/869869.png';
+let moon='https://cdn-icons-png.flaticon.com/512/547/547433.png'
+// update state on toggle
+const handleToggle = (e) => {
+  if (e.target.checked) {
+    setTheme("dark");
+  } else {
+    setTheme("light");
+  }
+};
+useEffect(() => {
+  localStorage.setItem("theme", themes);
+  const Theme = localStorage.getItem("theme");
+  document.querySelector("html").setAttribute("data-theme", Theme);
+}, [themes]);
 
     return (
         <div className='max-w-screen-xl mx-auto'>
@@ -52,6 +71,20 @@ let handleout=()=>{
          
         
         }
+
+<button className="btn btn-square btn-ghost">
+          <label className="swap swap-rotate w-12 h-12">
+            <input
+              type="checkbox"
+              onChange={handleToggle}
+              // show toggle image based on localstorage theme
+              checked={themes === "light" ? false : true}
+            />
+            <img src={sun} className="w-8 h-8 swap-on" />
+            <img src={moon} className="w-8 h-8 swap-off"/>
+          </label>
+        </button>
+
   </div>
 </div>
         </div>
