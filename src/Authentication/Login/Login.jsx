@@ -8,7 +8,7 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-let {Login}=useContext(AuthService)
+let {Login,googleSignin}=useContext(AuthService)
   const { register, formState: { errors }, handleSubmit ,reset ,watch } = useForm();
   const onSubmit = data => {
 console.log(data);
@@ -21,6 +21,19 @@ console.log(user);
   const errorCode = error.code;
   const errorMessage = error.message;
 });
+}
+let social=()=>{
+  googleSignin()
+  .then((result) => {
+
+    const user = result.user;
+console.log(user);
+  }).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+  });
+
 }
 
     return (
@@ -60,6 +73,9 @@ console.log(user);
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+      <div className='mx-auto mb-7'>
+        <button className='btn btn-outline  btn-circle ' onClick={social} >G</button>
+      </div>
     </div>
   </div>
 </div>

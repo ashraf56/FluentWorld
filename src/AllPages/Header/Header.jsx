@@ -36,16 +36,16 @@ let handleout=()=>{
       <li><Link>Home</Link> </li>
       <li><Link>Instructors</Link> </li>
       <li><Link>Classes</Link> </li>
-      <li><Link>Dashboard </Link> </li>
-      {user ?  <li><Link onClick={handleout}>LogOut</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
+      {user && <li><Link>Dashboard </Link> </li>}
+      {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 
       
     </ul>
   </div>
   <div className="navbar-end">
   
-   {user && <div className="avatar">
-  <div className="w-10 rounded-full ring ring-slate-950 ring-offset-base-100 ring-offset-2">
+   {user?.photoURL && <div className="avatar">
+  <div className="w-8 rounded-full ring ring-slate-950 ring-offset-base-100 ring-offset-2">
      <img src={user.photoURL} className='rounded-full' />
   </div>
 </div>
