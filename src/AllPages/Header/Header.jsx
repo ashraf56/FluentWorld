@@ -18,7 +18,6 @@ let handleout=()=>{
  
 let sun='https://cdn-icons-png.flaticon.com/512/869/869869.png';
 let moon='https://cdn-icons-png.flaticon.com/512/547/547433.png'
-// update state on toggle
 const handleToggle = (e) => {
   if (e.target.checked) {
     setTheme("dark");
@@ -44,7 +43,7 @@ useEffect(() => {
       <li><Link>Home</Link> </li>
       <li><Link>Instructors</Link> </li>
       <li><Link>Classes</Link> </li>
-      <li><Link>Dashboard </Link> </li>
+      <li><Link >Dashboard </Link> </li>
 
       </ul>
     </div>
@@ -55,7 +54,7 @@ useEffect(() => {
       <li><Link>Home</Link> </li>
       <li><Link>Instructors</Link> </li>
       <li><Link>Classes</Link> </li>
-      {user && <li><Link>Dashboard </Link> </li>}
+      {user && <li><Link to='dashboard'>Dashboard </Link> </li>}
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 
       
@@ -77,7 +76,6 @@ useEffect(() => {
             <input
               type="checkbox"
               onChange={handleToggle}
-              // show toggle image based on localstorage theme
               checked={themes === "light" ? false : true}
             />
             <img src={sun} className="w-8 h-8 swap-on" />
