@@ -24,7 +24,10 @@ const Dashboard = () => {
       { isAdmin ? <>
       <li><Link to='/dashboard/users'> <FaUser/> Manage Users</Link></li>
       <li><Link to='/dashboard/manageClass'> <FaBandcamp/> Manage Classes</Link></li> 
-      </> : ''}
+      </> :  <>
+      <li><Link to='/dashboard/users'> <FaUser/>not Manage Users</Link></li>
+      <li><Link to='/dashboard/manageClass'> <FaBandcamp/> not Manage Classes</Link></li> 
+      </> }
     </ul>
     <ul className="menu p-4 w-80 h-1/6 bg-gray-950 text-white mx-auto ">
      

@@ -67,7 +67,7 @@ fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
       { user?.role === 'admin'  ? <button className='btn btn-xs' disabled>Make Admin</button>: <button className='btn btn-xs' onClick={()=> makeAdmin(user)} >Make Admin</button>}
     </td>
     <td>
-      { user?.role === 'instructor' || user.role=== 'admin' ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}
+      { user?.role === 'instructor'  ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}
     </td>
    
   </tr>)
