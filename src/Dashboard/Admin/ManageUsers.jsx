@@ -39,7 +39,7 @@ fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
 
             <div className="overflow-x-auto">
   <table className="table table-zebra">
-    {/* head */}
+   
     <thead>
       <tr>
         <th>#
@@ -64,7 +64,7 @@ fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
      </td>
     <td>{user.name}</td>
     <td>
-      { user?.role === 'admin'  ? <button className='btn btn-xs' disabled>Make Admin</button>: <button className='btn btn-xs' onClick={()=> makeAdmin(user)} >Make Admin</button>}
+      { user?.role === 'admin'   ? <button className='btn btn-xs' disabled>Make Admin</button>: <button className='btn btn-xs' onClick={()=> makeAdmin(user)} >Make Admin</button>}
     </td>
     <td>
       { user?.role === 'instructor'  ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}

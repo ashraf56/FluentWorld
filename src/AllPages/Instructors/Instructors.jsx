@@ -20,7 +20,7 @@ let {data:instructors=[],refetch}=useQuery(
     return (
         <div className='mb-11'>
 <h1 className='text-5xl font-bold text-center uppercase pt-8' >All Instructor</h1>
-<div className='grid md:grid-cols-3 mx-12 '>
+<div className='grid md:grid-cols-3 mx-12 gap-3 '>
 {
     instructors.map(instructor => 
         <div className="card w-96 bg-base-100 shadow-xl">

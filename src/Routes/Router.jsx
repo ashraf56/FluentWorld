@@ -7,7 +7,10 @@ import Dashboard from "../Dashboard/Dashboard";
 import ManageUsers from "../Dashboard/Admin/ManageUsers";
 import ManageClasses from "../Dashboard/Admin/ManageClasses";
 import Instructors from "../AllPages/Instructors/Instructors";
-import AdminRoute from "./AdminRoute";
+import AddClass from "../Dashboard/INstructors/AddClass";
+import MyClass from "../Dashboard/INstructors/MyClass";
+import MyenrolledClass from "../Dashboard/Students/MyenrolledClass";
+import MyselectedClass from "../Dashboard/Students/MyselectedClass";
 
 const router = createBrowserRouter([
     {
@@ -45,12 +48,28 @@ element: <Instructors></Instructors>,
   children:[
     {
       path:'users',
-      element:<AdminRoute> <ManageUsers/> </AdminRoute>
+      element: <ManageUsers/>
     },
     {
       path:'manageClass',
-      element:<AdminRoute> <ManageClasses/> </AdminRoute>  
-    }
+      element:<ManageClasses/> 
+    },
+    {
+      path:'addclass',
+      element:<AddClass/>  
+    },
+    {
+      path:'myclass',
+      element: <MyClass/>  
+    },
+    {
+      path:'myEclass',
+      element:<MyenrolledClass></MyenrolledClass>  
+    },
+    {
+      path:'mySclass',
+      element:<MyselectedClass></MyselectedClass>
+    },
   ]
 }
 
