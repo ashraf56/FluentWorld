@@ -11,9 +11,22 @@ const ManageClasses = () => {
             return res.data
             
                 })
+
+
+                let approve=(allclass)=>{
+                  fetch(`http://localhost:3000/classes/approve/${allclass._id}`,{
+                    method:"PATCH"
+                  })
+                  .then(res=> res.json())
+                  .then(data=> {
+                      console.log(data);
+                      refetch()
+                  })
+                  }
     return (
         <div>
-            all classes
+                   <h1 className='text-5xl font-bold text-center uppercase py-5' >Manage All Class</h1>
+
 
             <div className="overflow-x-auto">
   <table className="table table-zebra">
@@ -46,7 +59,11 @@ const ManageClasses = () => {
     <td>{allclass.email}</td>
     <td>{allclass.cname}</td>
     <td>{allclass.status}</td>
-    <td><button className='btn'>Approve</button></td>
+    <td>
+    { allclass?.status === 'approve'   ? <button className='btn btn-xs mx-2' disabled>approve</button>: <button className='btn btn-xs mx-2' onClick={()=> approve(allclass)} >Make approve</button> }
+      <button className='btn btn-xs'  >Deny </button>
+    
+    </td>
     
    
   </tr>)

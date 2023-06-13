@@ -42,7 +42,7 @@ useEffect(() => {
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-black text-white z-20 rounded-box w-52">
       <li><Link>Home</Link> </li>
       <li><Link to='/instruc' >Instructors</Link> </li>
-      <li><Link>Classes</Link> </li>
+      <li><Link to='/Classes'> Classes</Link> </li>
       {user && <li><Link to='dashboard/users'>Dashboard </Link> </li>}
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
       </ul>
@@ -53,7 +53,7 @@ useEffect(() => {
     <ul className="menu menu-horizontal px-1">
       <li><Link>Home</Link> </li>
       <li><Link to='/instruc' >Instructors</Link> </li>
-      <li><Link>Classes</Link> </li>
+      <li><Link to='/Classes'>Classes</Link> </li>
       {user && <li><Link to='dashboard/users'>Dashboard </Link> </li>}
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 

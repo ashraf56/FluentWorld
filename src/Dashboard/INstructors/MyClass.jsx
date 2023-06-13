@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import { useQuery } from 'react-query';
+import axios from 'axios';
 
 const MyClass=() => {
 let {user}=useContext(AuthService)
