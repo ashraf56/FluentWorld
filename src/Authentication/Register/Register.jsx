@@ -18,7 +18,8 @@ RandonUser(data.email,data.password)
   const user = userCredential.user;
  updateUser(data.displayName , data.photoURL)
  .then(() => {
-  let info={name:data.displayName , email:data.email , photoURL:data.photoURL}
+  let info={name:data.displayName , email:data.email , photoURL:data.photoURL, role: 'student'}
+  
             fetch('http://localhost:3000/alluser',{
               method:"POST"
               ,headers:{

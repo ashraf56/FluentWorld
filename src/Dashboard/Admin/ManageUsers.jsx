@@ -46,6 +46,7 @@ fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
         </th>
         <th>Image</th>
         <th>Name</th>
+        <th>Current Role</th>
         <th>Action</th>
         <th>Action</th>
       </tr>
@@ -63,6 +64,7 @@ fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
       
      </td>
     <td>{user.name}</td>
+    <td>{user.role}</td>
     <td>
       { user?.role === 'admin'   ? <button className='btn btn-xs' disabled>Make Admin</button>: <button className='btn btn-xs' onClick={()=> makeAdmin(user)} >Make Admin</button>}
     </td>

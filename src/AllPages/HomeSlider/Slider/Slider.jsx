@@ -1,17 +1,24 @@
-import React from 'react';
-import { EffectFlip, Pagination, Navigation, EffectCoverflow } from "swiper";
+import React, { useRef } from 'react';
+import { EffectFlip,Autoplay, Pagination, Navigation, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Fade } from 'react-awesome-reveal';
 const Slider = () => {
+ 
+  
     return (
-        <div>
+        <div> <Fade delay={1e3}  damping={1e-1}>
            <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 50,
@@ -21,7 +28,8 @@ const Slider = () => {
           slideShadows: true,
         }}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        navigation={true}
+        modules={[EffectCoverflow, Pagination,Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
@@ -37,7 +45,7 @@ const Slider = () => {
           <img src="https://images.pexels.com/photos/2002217/pexels-photo-2002217.jpeg?auto=compress&cs=tinysrgb&w=600" />
         </SwiperSlide>
        
-      </Swiper>
+      </Swiper></Fade>
         </div>
     );
 };

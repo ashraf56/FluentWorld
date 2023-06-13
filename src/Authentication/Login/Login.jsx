@@ -31,7 +31,7 @@ let social=()=>{
   .then((result) => {
 
     const user = result.user;
-    let info={name:user.displayName , email:user.email, photoURL:user.photoURL}
+    let info={name:user.displayName , email:user.email, photoURL:user.photoURL , role: 'student'}
 
     fetch('http://localhost:3000/alluser',{
         method:"POST"
@@ -40,6 +40,8 @@ let social=()=>{
         },
         body:JSON.stringify(info)
       })
+
+ 
       .then(r=> r.json()).then(data=> {
         if (data.insertedId) {
           Swal.fire({

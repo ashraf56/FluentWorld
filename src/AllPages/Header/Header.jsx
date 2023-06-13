@@ -39,15 +39,15 @@ useEffect(() => {
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-black text-white z-20 rounded-box w-52">
       <li><Link>Home</Link> </li>
-      <li><Link>Instructors</Link> </li>
+      <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link>Classes</Link> </li>
-      <li><Link >Dashboard </Link> </li>
-
+      {user && <li><Link to='dashboard/users'>Dashboard </Link> </li>}
+      {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
       </ul>
     </div>
-    <a className="btn btn-ghost  text-xl uppercase">FluentWorld</a>
+    <a className="btn btn-ghost text-xs  md:text-xl uppercase">FluentWorld</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -71,7 +71,7 @@ useEffect(() => {
         
         }
 
-<button className="btn btn-square btn-ghost mx-6">
+<button className="btn btn-square btn-ghost lg:mx-6">
           <label className="swap swap-rotate w-12 h-12">
             <input
               type="checkbox"

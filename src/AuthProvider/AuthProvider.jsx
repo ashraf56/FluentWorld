@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import app from '../Authentication/Firebase/firebase.config';
 import axios from 'axios';
+import { getRole } from './Auths';
 
 const auth = getAuth(app);
 export let AuthService=createContext();
@@ -11,6 +12,10 @@ export let AuthService=createContext();
 const AuthProvider = ({children}) => {
 let [user,setuser]=useState()
 let [Loading,setLoading]=useState(true);
+
+
+
+
 
 let RandonUser=(email,password)=>{
     setLoading(true)
@@ -67,7 +72,7 @@ let Login=(email,password)=>{
 
 
  let AuthManager={
-    user,Loading,RandonUser,googleSignin,updateUser,Signout,Login
+    user,Loading,RandonUser,googleSignin,updateUser,Signout,Login,
  }
     return (
         <AuthService.Provider value={AuthManager}>
