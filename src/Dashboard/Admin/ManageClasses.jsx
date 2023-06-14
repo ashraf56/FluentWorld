@@ -7,14 +7,14 @@ const ManageClasses = () => {
     let {data:allClass=[],refetch}=useQuery( 
         ['classes'],
        async()=>{
-            let res= await axios.get('http://localhost:3000/classes')
+            let res= await axios.get('https://b7a12-summer-camp-server-side-one.vercel.app/classes')
             return res.data
             
                 })
 
 
                 let approve=(allclass)=>{
-                  fetch(`http://localhost:3000/classes/approve/${allclass._id}`,{
+                  fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/classes/approve/${allclass._id}`,{
                     method:"PATCH"
                   })
                   .then(res=> res.json())
@@ -24,7 +24,7 @@ const ManageClasses = () => {
                   })
                   }
                 let deny=(dn)=>{
-                  fetch(`http://localhost:3000/classes/deny/${dn._id}`,{
+                  fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/classes/deny/${dn._id}`,{
                     method:"PATCH"
                   })
                   .then(res=> res.json())

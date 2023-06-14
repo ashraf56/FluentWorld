@@ -3,7 +3,7 @@ import useADmin from '../../Hooks/useADmin';
 import useInstructor from '../../Hooks/useInstructor';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FaDollarSign } from 'react-icons/fa';
+import { FaCloudDownloadAlt, FaDollarSign, FaSortNumericUp, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const CardClasses = ({ac}) => {
@@ -13,12 +13,12 @@ const CardClasses = ({ac}) => {
     let navigate=useNavigate()
     let  location = useLocation();
 
-let {image,email,name,seat,cname,price}=ac
+let {image,email,name,seat,cname,price, enrolledstudent}=ac
     let selectitem=classes=>{
 
         if (user && user.email) {
       let addtoCartClass={ class_id:ac._id , image, name , cname, email:user.email, seat ,price   }
-          fetch('http://localhost:3000/cartClass',{
+          fetch('https://b7a12-summer-camp-server-side-one.vercel.app/cartClass',{
       method:"POST",
       headers:{
         'content-type':'application/json'
@@ -84,8 +84,10 @@ let {image,email,name,seat,cname,price}=ac
 
     <div className="card-actions justify-start pb-5">
       <div className="badge badge-outline"> <FaDollarSign/>{price}</div> 
+      <div className="badge badge-outline "> <FaUserShield/> <span className='ps-2'>{enrolledstudent}</span>
+      </div> 
     </div>
-{ isadmin || isInstructor ? <button className='btn ' disabled  >Select now</button>: <button className='btn btn-outline ' onClick={()=> selectitem(ac)}  >Select now</button>}
+{ isadmin || isInstructor || seat === 0 ? <button className='btn ' disabled  >Select now</button>: <button className='btn btn-outline ' onClick={()=> selectitem(ac)}  >Select now</button>}
 
   </div>
 </div>

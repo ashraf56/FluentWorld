@@ -8,7 +8,7 @@ const MyselectedClass = () => {
     let {data:cartclass=[],refetch}=useQuery( 
         ['approve'],
        async()=>{
-            let res= await axios.get(`http://localhost:3000/cartClass`)
+            let res= await axios.get(`https://b7a12-summer-camp-server-side-one.vercel.app/cartClass`)
             return res.data
             
                 })
@@ -25,7 +25,7 @@ let deleteCArt=(cartclass)=>{
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:3000/cartClass/${cartclass._id}`,
+          fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/cartClass/${cartclass._id}`,
           {
             method:"DELETE"
           }

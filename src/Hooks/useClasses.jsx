@@ -6,7 +6,8 @@ const useClasses = () => {
     let {data:approveclass=[],refetch}=useQuery( 
         ['approve'],
        async()=>{
-            let res= await axios.get(`http://localhost:3000/approve`)
+            let res= await axios.get(`https://b7a12-summer-camp-server-side-one.vercel.app/approve`)
+            
             return res.data
             
                 })

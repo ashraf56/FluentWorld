@@ -8,7 +8,7 @@ let {user}=useContext(AuthService)
     let {data:myClass=[],refetch}=useQuery( 
         ['classes'],
        async()=>{
-            let res= await axios.get(`http://localhost:3000/classes/${user.email}`)
+            let res= await axios.get(`https://b7a12-summer-camp-server-side-one.vercel.app/classes/${user.email}`)
             return res.data
             
                 })

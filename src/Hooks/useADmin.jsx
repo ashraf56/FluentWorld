@@ -6,12 +6,12 @@ import useAxiosSecure from './useAxiosSecure';
 
 const useADmin = () => {
     let {user}=useContext(AuthService)
- let [AxiosGuard]=useAxiosSecure()
+ let [axiosguard]=useAxiosSecure()
     const { data:isAdmin , isLoading: adminloading} = useQuery({
         queryKey: ['isAdmin', user?.email],
         enabled:!!user?.email && !!localStorage.getItem("summer-token"),
         queryFn: async () => {
-          const res = await AxiosGuard.get(`alluser/admin/${user?.email}`)
+          const res = await axiosguard.get(`alluser/admin/${user?.email}`)
     
           return res.data.admin;
         },

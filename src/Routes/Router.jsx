@@ -13,6 +13,9 @@ import MyenrolledClass from "../Dashboard/Students/MyenrolledClass";
 import MyselectedClass from "../Dashboard/Students/MyselectedClass";
 import Classes from "../AllPages/Classes/Classes";
 import PrivateSecure from "./PrivateSecure";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
+import DashBoardHome from "../AllPages/DashBoardHome";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +49,7 @@ element: <Classes></Classes>
 },
 
 
+
       ]
     },
 
@@ -54,20 +58,25 @@ element: <Classes></Classes>
   element:<Dashboard></Dashboard>,
   children:[
     {
+      path:'dashhome',
+      element:<DashBoardHome></DashBoardHome>
+      
+      },
+    {
       path:'users',
-      element: <ManageUsers/>
+      element:<AdminRoute> <ManageUsers/></AdminRoute> 
     },
     {
       path:'manageClass',
-      element:<ManageClasses/> 
+      element: <AdminRoute> <ManageClasses/></AdminRoute>   
     },
     {
       path:'addclass',
-      element:<AddClass/>  
+      element:<InstructorRoute><AddClass/>   </InstructorRoute> 
     },
     {
       path:'myclass',
-      element: <MyClass/>  
+      element: <InstructorRoute> <MyClass/> </InstructorRoute>  
     },
     {
       path:'myEclass',

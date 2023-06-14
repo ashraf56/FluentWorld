@@ -4,22 +4,22 @@ import { useNavigate } from 'react-router-dom';
 
 
 const useAxiosSecure = () => {
-  const navigate = useNavigate(); 
+  let navigate = useNavigate(); 
 
-  const AxiosGuard = axios.create({
-    baseURL: 'http://localhost:3000', 
+  let axiosguard = axios.create({
+    baseURL: 'https://b7a12-summer-camp-server-side-one.vercel.app/', 
   });
 
   useEffect(() => {
-    AxiosGuard.interceptors.request.use((config) => {
-      const token = localStorage.getItem('summer-token');
+    axiosguard.interceptors.request.use((config) => {
+      let token = localStorage.getItem('summer-token');
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
       return config;
     });
 
-    AxiosGuard.interceptors.response.use(
+    axiosguard.interceptors.response.use(
       (response) => response,
       async (error) => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
@@ -28,9 +28,9 @@ const useAxiosSecure = () => {
         return Promise.reject(error);
       }
     );
-  }, [ navigate, AxiosGuard]);
+  }, [ navigate, axiosguard]);
 
-  return [AxiosGuard];
+  return [axiosguard];
 };
 
 export default useAxiosSecure;

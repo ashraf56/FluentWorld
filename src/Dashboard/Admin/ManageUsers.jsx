@@ -6,13 +6,13 @@ const ManageUsers = () => {
     let {data:users=[],refetch}=useQuery( 
     ['alluser'],
    async()=>{
-        let res= await axios.get('http://localhost:3000/alluser')
+        let res= await axios.get('https://b7a12-summer-camp-server-side-one.vercel.app/alluser')
         return res.data
         
             })
 
 let makeAdmin=(alluser)=>{
-fetch(`http://localhost:3000/alluser/admin/${alluser._id}`,{
+fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/alluser/admin/${alluser._id}`,{
   method:"PATCH"
 })
 .then(res=> res.json())
@@ -22,7 +22,7 @@ fetch(`http://localhost:3000/alluser/admin/${alluser._id}`,{
 })
 }
 let makeInstructor=(alluser)=>{
-fetch(`http://localhost:3000/alluser/instructor/${alluser._id}`,{
+fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/alluser/instructor/${alluser._id}`,{
   method:"PATCH"
 })
 .then(res=> res.json())
