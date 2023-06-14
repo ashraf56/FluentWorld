@@ -1,19 +1,17 @@
 import React, { useContext } from 'react';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import { useForm } from 'react-hook-form';
-import Swal from 'sweetalert2';
-import axios from 'axios';
+
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 
-const img_hosting_token = import.meta.env.VITE_IMAGE_TOKEN;
-console.log(img_hosting_token);
+const img_token = import.meta.env.VITE_IMAGE_TOKEN;
 
 const AddClass = () => {
     let {user}=useContext(AuthService)
     let [axiocSecure]=useAxiosSecure()
 
-    let hosting_Url=`https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+    let hosting_Url=`https://api.imgbb.com/1/upload?key=${img_token}`;
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         let fromdata= new FormData();
@@ -29,14 +27,13 @@ const AddClass = () => {
 if(imgres.success){
   let imgUrl=imgres.data.display_url;
   let {cname,email,name,price,seat}=data
-  let newclass={cname, email, name, price:parseFloat(price), seat:parseFloat(seat), image:imgUrl ,status:'pending'}
-  console.log(newclass);
+  let newclass={cname, email, name, price:parseFloat(price), seat:parseFloat(seat), image:imgUrl ,status:'pending' ,enrolledstudent: 0 }
   axiocSecure.post('/classes' , newclass)
   .then(data =>{
-    console.log('server',data.data);
+
   })
 }
-
+reset()
        console.log(imgres);
         })
     }

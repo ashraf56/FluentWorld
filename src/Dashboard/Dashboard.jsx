@@ -1,16 +1,15 @@
 import React, { useContext, useEffect } from 'react';
-import { FaBandcamp, FaHome, FaUser } from 'react-icons/fa';
+import { FaAd, FaAddressCard, FaBandcamp, FaHome, FaPlusCircle, FaSave, FaUser } from 'react-icons/fa';
+import { useQuery } from 'react-query';
 import { Link, Outlet } from 'react-router-dom';
-import { AuthService } from '../AuthProvider/AuthProvider';
+import useADmin from '../Hooks/useADmin';
+import useInstructor from '../Hooks/useInstructor';
 
 
 const Dashboard = () => {
 
-
-//  let isInstructor=false;
-// let isadmin=true;
-
-// let { user, role } = useContext(AuthService)
+  let [isadmin]=useADmin();
+  let [isInstructor]=useInstructor()
 
 
 // let content = null;
@@ -55,34 +54,13 @@ const Dashboard = () => {
        <h1 className='text-lg uppercase text-center font-bold py-6'>Data Insights Dashboard</h1>
  
   
-  
-
-{/* { isadmin &&
- <>   <li><Link to='/dashboard/users'> <FaUser/> All user</Link></li>
-      <li><Link to='/dashboard/manageClass'> <FaBandcamp/>MAnage Classes</Link></li>   </>
  
- ? isInstructor &&
- <> <li><Link to='/dashboard/addclass'> <FaUser/> Add class</Link></li>
-     <li><Link to='/dashboard/myclass'> <FaBandcamp/> My  Classes</Link></li>  </>
 
- : user && <> <li><Link to='/dashboard/myEclass'> <FaUser/> Add my class</Link></li>
-       <li><Link to='/dashboard/mySclass'> <FaBandcamp/>  select My  Classes</Link></li>
-       </> 
-      
-      
-      } */}
 
-   {
 
-// user
-// ? <>
-// <li><Link to='/dashboard/myEclass'> <FaUser/> Add my class</Link></li>
-//        <li><Link to='/dashboard/mySclass'> <FaBandcamp/>  select My  Classes</Link></li>
-// </>
-//  :
 
  
- <>
+ {/* <>
  <li><Link to='/dashboard/users'> <FaUser/> All user</Link></li>
       <li><Link to='/dashboard/manageClass'> <FaBandcamp/>MAnage Classes</Link></li>
  
@@ -93,11 +71,24 @@ const Dashboard = () => {
 
  <li><Link to='/dashboard/myEclass'> <FaUser/> Add my class</Link></li>
        <li><Link to='/dashboard/mySclass'> <FaBandcamp/>  select My  Classes</Link></li>
-  </>
+  </> */}
 
+{
+isInstructor ?
 
-   }
-    
+<>
+<li><Link to='/dashboard/addclass'> <FaUser/> Add class</Link></li>
+     <li><Link to='/dashboard/myclass'> <FaBandcamp/> My  Classes</Link></li> 
+</> : isadmin ? 
+
+<><li><Link to='/dashboard/users'> <FaUser/> All user</Link></li>
+      <li><Link to='/dashboard/manageClass'> <FaBandcamp/>MAnage Classes</Link></li></>
+:  <>
+<li><Link to='/dashboard/myEclass'> <FaSave/> My Enrolled Classes</Link></li>
+       <li><Link to='/dashboard/mySclass'> <FaPlusCircle/> My Selected Classes</Link></li>
+</>
+}
+  
       
      {/* {
       role === "student" 

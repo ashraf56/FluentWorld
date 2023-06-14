@@ -54,7 +54,7 @@ useEffect(() => {
       <li><Link>Home</Link> </li>
       <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link to='/Classes'>Classes</Link> </li>
-      {user && <li><Link to='dashboard/users'>Dashboard </Link> </li>}
+      {user && <li><Link to='dashboard'>Dashboard </Link> </li>}
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 
       

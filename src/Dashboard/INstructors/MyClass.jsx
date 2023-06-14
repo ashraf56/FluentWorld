@@ -26,6 +26,7 @@ let {user}=useContext(AuthService)
         <th>Instructor Name</th>
         <th>Instructor email</th>
         <th>Class Name</th>
+        <th>Enrolled student</th>
         <th>Status</th>
         
       </tr>
@@ -45,7 +46,12 @@ let {user}=useContext(AuthService)
     <td>{allclass.name}</td>
     <td>{allclass.email}</td>
     <td>{allclass.cname}</td>
+    <td>{allclass.enrolledstudent}</td>
     <td>{allclass.status}</td>
+    <td>
+<button className='btn btn-xs'>Update</button>
+
+    </td>
     
    
   </tr>)

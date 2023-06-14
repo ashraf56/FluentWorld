@@ -4,23 +4,23 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 import useAxiosSecure from './useAxiosSecure';
 
-const useADmin = () => {
+const useInstructor = () => {
     let {user}=useContext(AuthService)
  let [AxiosGuard]=useAxiosSecure()
-    const { data:isAdmin , isLoading: adminloading} = useQuery({
-        queryKey: ['isAdmin', user?.email],
+    const { data:isInstructor , isLoading: Insloading} = useQuery({
+        queryKey: ['isInstructor', user?.email],
         enabled:!!user?.email && !!localStorage.getItem("summer-token"),
         queryFn: async () => {
-          const res = await AxiosGuard.get(`alluser/admin/${user?.email}`)
+          const res = await AxiosGuard.get(`alluser/instructor/${user?.email}`)
     
-          return res.data.admin;
+          return res.data.instructor;
         },
         
       })
       
       
-      return[isAdmin,adminloading]
+      return[isInstructor,Insloading]
 
 };
 
-export default useADmin;
+export default useInstructor;

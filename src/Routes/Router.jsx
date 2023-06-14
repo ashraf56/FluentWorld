@@ -12,6 +12,7 @@ import MyClass from "../Dashboard/INstructors/MyClass";
 import MyenrolledClass from "../Dashboard/Students/MyenrolledClass";
 import MyselectedClass from "../Dashboard/Students/MyselectedClass";
 import Classes from "../AllPages/Classes/Classes";
+import PrivateSecure from "./PrivateSecure";
 
 const router = createBrowserRouter([
     {
@@ -70,11 +71,11 @@ element: <Classes></Classes>
     },
     {
       path:'myEclass',
-      element:<MyenrolledClass></MyenrolledClass>  
+      element:<PrivateSecure> <MyenrolledClass></MyenrolledClass>   </PrivateSecure> 
     },
     {
       path:'mySclass',
-      element:<MyselectedClass></MyselectedClass>
+      element:<PrivateSecure>   <MyselectedClass></MyselectedClass></PrivateSecure>
     },
   ]
 }

@@ -23,6 +23,16 @@ const ManageClasses = () => {
                       refetch()
                   })
                   }
+                let deny=(dn)=>{
+                  fetch(`http://localhost:3000/classes/deny/${dn._id}`,{
+                    method:"PATCH"
+                  })
+                  .then(res=> res.json())
+                  .then(data=> {
+                      console.log(data);
+                      refetch()
+                  })
+                  }
     return (
         <div>
                    <h1 className='text-5xl font-bold text-center uppercase py-5' >Manage All Class</h1>
@@ -40,7 +50,7 @@ const ManageClasses = () => {
         <th>Instructor email</th>
         <th>Class Name</th>
         <th>Status</th>
-        <th>Action</th>
+        <th className='col-span-3 text-center'>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -60,8 +70,10 @@ const ManageClasses = () => {
     <td>{allclass.cname}</td>
     <td>{allclass.status}</td>
     <td>
-    { allclass?.status === 'approve'   ? <button className='btn btn-xs mx-2' disabled>approve</button>: <button className='btn btn-xs mx-2' onClick={()=> approve(allclass)} >Make approve</button> }
-      <button className='btn btn-xs'  >Deny </button>
+    { allclass?.status === 'approve'   ? <button className='btn btn-xs mx-2' disabled>approve</button>: <button className='btn btn-xs mx-2' onClick={()=> approve(allclass)} > approve</button> }
+    { allclass?.status === 'deny'   ? <button className='btn btn-xs mx-2' disabled>Deny</button>: <button className='btn btn-xs mx-2' onClick={()=> deny(allclass)} >Deny</button> }
+
+   <button className='btn btn-xs mx-2' onClick={()=> deny(allclass)} >Send Feedback</button> 
     
     </td>
     

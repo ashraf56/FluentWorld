@@ -102,7 +102,7 @@ reset()
             </a>          </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn  btn-outline">Register</button>
      {errors.password?.type === 'pattern' && <p className='text-red-700 text-sm'>Special latter or Capital latter missed</p>}
      {errors.password?.type === 'minLength' && <p className='text-red-700 text-sm'>Password Length should be  more than 6 </p>}
      {errors.cpassword && <span className='text-red-700 text-sm' >{errors.cpassword?.message}</span>}  

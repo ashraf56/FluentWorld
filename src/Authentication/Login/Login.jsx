@@ -96,7 +96,7 @@ let social=()=>{
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn  btn-outline">Login</button>
         </div>
       </form>
       <div className='mx-auto mb-7'>
