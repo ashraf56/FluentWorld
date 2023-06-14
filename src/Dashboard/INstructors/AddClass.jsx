@@ -9,7 +9,7 @@ const img_token = import.meta.env.VITE_IMAGE_TOKEN;
 
 const AddClass = () => {
     let {user}=useContext(AuthService)
-    let [axiocSecure]=useAxiosSecure()
+    let [AxiosGuard]=useAxiosSecure()
 
     let hosting_Url=`https://api.imgbb.com/1/upload?key=${img_token}`;
     const { register, handleSubmit, reset } = useForm();
@@ -28,7 +28,7 @@ if(imgres.success){
   let imgUrl=imgres.data.display_url;
   let {cname,email,name,price,seat}=data
   let newclass={cname, email, name, price:parseFloat(price), seat:parseFloat(seat), image:imgUrl ,status:'pending' ,enrolledstudent: 0 }
-  axiocSecure.post('/classes' , newclass)
+  AxiosGuard.post('/classes' , newclass)
   .then(data =>{
 
   })

@@ -14,7 +14,9 @@ let {user}=useContext(AuthService)
                 })
     return (
         <div>
-            all my created class
+                    <h1 className='text-5xl font-bold text-center uppercase py-5' >all my created class</h1>
+
+            
             <div className="overflow-x-auto">
   <table className="table table-zebra">
    
