@@ -3,7 +3,8 @@ import React from 'react';
 const MyenrolledClass = () => {
     return (
         <div>
-            my
+          <h1 className='text-5xl font-bold text-center uppercase py-5' > my Enrolled  
+             classes</h1>
         </div>
     );
 };
