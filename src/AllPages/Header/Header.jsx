@@ -47,7 +47,7 @@ useEffect(() => {
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xs  md:text-xl uppercase">FluentWorld</a>
+    <a className="btn btn-ghost text-xs  md:text-2xl uppercase">FluentWorld</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
