@@ -57,11 +57,7 @@ useEffect(() => {
       <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link to='/Classes'>Classes</Link> </li>
       {user && <li><Link to='dashboard/dashhome'>Dashboard </Link> </li>}
-      {user && <li><div className="indicator">
-  <button className="btn">Total
-  {user ? <div className="badge badge-secondary">{cartClass.length}</div> : <div className="badge badge-secondary">0</div> }
-  </button>
-</div></li>}
+    
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 
       
