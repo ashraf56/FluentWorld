@@ -33,7 +33,7 @@ let social=()=>{
     const user = result.user;
     let info={name:user.displayName , email:user.email, photoURL:user.photoURL , role: 'student'}
 
-    fetch('https://b7a12-summer-camp-server-side-one.vercel.app/alluser',{
+    fetch('https://summer-camp-server-102h.onrender.com/alluser',{
         method:"POST"
         ,headers:{
           'content-type': 'application/json'

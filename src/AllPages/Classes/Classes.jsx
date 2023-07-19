@@ -13,6 +13,7 @@ import useClasses from '../../Hooks/useClasses';
 const Classes = () => {
  
    let[approveclass]=useClasses()
+   
 
 
 

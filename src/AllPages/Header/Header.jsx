@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import useCartClass from '../../Hooks/useCartClass';
 
 const Header = () => {
   let{user,Signout}=useContext(AuthService)
+  let[cartClass]=useCartClass()
   const [themes, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -55,6 +57,11 @@ useEffect(() => {
       <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link to='/Classes'>Classes</Link> </li>
       {user && <li><Link to='dashboard/dashhome'>Dashboard </Link> </li>}
+      {user && <li><div className="indicator">
+  <button className="btn">Total
+  {user ? <div className="badge badge-secondary">{cartClass.length}</div> : <div className="badge badge-secondary">0</div> }
+  </button>
+</div></li>}
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 
       

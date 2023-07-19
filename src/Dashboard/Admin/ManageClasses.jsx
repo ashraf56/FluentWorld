@@ -8,14 +8,14 @@ const ManageClasses = () => {
     let {data:allClass=[],refetch}=useQuery( 
         ['classes'],
        async()=>{
-            let res= await axios.get('https://b7a12-summer-camp-server-side-one.vercel.app/classes')
+            let res= await axios.get('https://summer-camp-server-102h.onrender.com/classes')
             return res.data
             
                 })
 
 
                 let approve=(allclass)=>{
-                  fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/classes/approve/${allclass._id}`,{
+                  fetch(`https://summer-camp-server-102h.onrender.com/classes/approve/${allclass._id}`,{
                     method:"PATCH"
                   })
                   .then(res=> res.json())
@@ -25,7 +25,7 @@ const ManageClasses = () => {
                   })
                   }
                 let deny=(dn)=>{
-                  fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/classes/deny/${dn._id}`,{
+                  fetch(`https://summer-camp-server-102h.onrender.com/classes/deny/${dn._id}`,{
                     method:"PATCH"
                   })
                   .then(res=> res.json())

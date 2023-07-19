@@ -6,13 +6,13 @@ const ManageUsers = () => {
     let {data:users=[],refetch}=useQuery( 
     ['alluser'],
    async()=>{
-        let res= await axios.get('https://b7a12-summer-camp-server-side-one.vercel.app/alluser')
+        let res= await axios.get('https://summer-camp-server-102h.onrender.com/alluser')
         return res.data
         
             })
 
 let makeAdmin=(alluser)=>{
-fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/alluser/admin/${alluser._id}`,{
+fetch(`https://summer-camp-server-102h.onrender.com/alluser/admin/${alluser._id}`,{
   method:"PATCH"
 })
 .then(res=> res.json())
@@ -22,7 +22,7 @@ fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/alluser/admin/${allu
 })
 }
 let makeInstructor=(alluser)=>{
-fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/alluser/instructor/${alluser._id}`,{
+fetch(`https://summer-camp-server-102h.onrender.com/alluser/instructor/${alluser._id}`,{
   method:"PATCH"
 })
 .then(res=> res.json())

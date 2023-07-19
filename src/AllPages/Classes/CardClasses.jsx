@@ -17,8 +17,8 @@ let {image,email,name,seat,cname,price, enrolledstudent}=ac
     let selectitem=classes=>{
 
         if (user && user.email) {
-      let addtoCartClass={ class_id:ac._id , image, name , cname, email:user.email, seat ,price   }
-          fetch('https://b7a12-summer-camp-server-side-one.vercel.app/cartClass',{
+      let addtoCartClass={ user_id:user.uid, class_id:ac._id , image, name , cname, email:user.email, seat ,price   }
+          fetch('https://summer-camp-server-102h.onrender.com/cartClass',{
       method:"POST",
       headers:{
         'content-type':'application/json'

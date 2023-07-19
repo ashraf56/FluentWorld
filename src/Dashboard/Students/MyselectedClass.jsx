@@ -1,17 +1,23 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useQuery } from 'react-query';
 import Swal from 'sweetalert2';
+import useCartClass from '../../Hooks/useCartClass';
+import { AuthService } from '../../AuthProvider/AuthProvider';
 
 const MyselectedClass = () => {
 
-    let {data:cartclass=[],refetch}=useQuery( 
-        ['approve'],
-       async()=>{
-            let res= await axios.get(`https://b7a12-summer-camp-server-side-one.vercel.app/cartClass`)
-            return res.data
-            
-                })
+   let [cartClass,refetch]=useCartClass()
+  //  let {user}=useContext(AuthService)
+  //  let {data: cartClass=[],refetch}=useQuery( 
+  //   ['cartClass'],
+  //  async()=>{
+  //       let res= await axios.get(`https://summer-camp-server-102h.onrender.com/cartClass/${user?.email}`)
+
+
+  //       return res.data
+        
+  //           })
 
 let deleteCArt=(cartclass)=>{
 
@@ -25,7 +31,7 @@ let deleteCArt=(cartclass)=>{
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://b7a12-summer-camp-server-side-one.vercel.app/cartClass/${cartclass._id}`,
+          fetch(`https://summer-camp-server-102h.onrender.com/cartClass/${cartclass._id}`,
           {
             method:"DELETE"
           }
@@ -68,8 +74,8 @@ let deleteCArt=(cartclass)=>{
       </tr>
     </thead>
     <tbody>
-   {
-    cartclass.map((cart,index)=>   <tr key={cart._id}>
+   { 
+    cartClass.map((cart,index)=>   <tr key={cart._id}>
     <th>{index+1}</th>
     <td>
     <div className="avatar">

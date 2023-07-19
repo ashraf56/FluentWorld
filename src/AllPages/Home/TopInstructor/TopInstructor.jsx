@@ -6,7 +6,7 @@ const TopInstructor = () => {
     let {data:topinstructor=[],refetch}=useQuery( 
         ['instructor'],
        async()=>{
-            let res= await axios.get(`https://b7a12-summer-camp-server-side-one.vercel.app/alluser/instructor`)
+            let res= await axios.get(`https://summer-camp-server-102h.onrender.com/alluser/instructor`)
             return res.data
             
                 })
