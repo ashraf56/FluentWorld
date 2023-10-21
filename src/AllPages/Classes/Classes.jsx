@@ -1,12 +1,4 @@
-import axios from 'axios';
 import React from 'react';
-import { useQuery } from 'react-query';
-import useADmin from '../../Hooks/useADmin';
-import { useContext } from 'react';
-import { AuthService } from '../../AuthProvider/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
-import useInstructor from '../../Hooks/useInstructor';
-import Swal from 'sweetalert2';
 import CardClasses from './CardClasses';
 import useClasses from '../../Hooks/useClasses';
 
@@ -21,8 +13,14 @@ const Classes = () => {
         <div >
             <h1 className='text-5xl font-bold text-center uppercase pt-8' >All Classes</h1>
 <div className='grid md:grid-cols-3 mx-12 gap-3  my-24'>
-{
-    approveclass.map(ac => 
+{approveclass.length === 0 ? (
+    <div className="col-span-3 flex justify-center items-center h-full">
+    <div className="w-max">
+      <span className="loading loading-dots loading-lg"></span>
+    </div>
+  </div>
+)
+   : (approveclass.map(ac => 
 
 
 <CardClasses ac={ac} key={ac._id} ></CardClasses>
@@ -30,7 +28,7 @@ const Classes = () => {
 
        
     
-    )
+    ))
 }</div>
         </div>
     );

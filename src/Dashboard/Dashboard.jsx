@@ -21,11 +21,11 @@ const Dashboard = () => {
     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   
   </div> 
-  <div className="drawer-side">
+  <div className="drawer-side min-h-full">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
   
-    <ul className="menu p-4 w-80 h-5/6 bg-gray-950 text-white">
-       <h1 className='text-lg uppercase text-center font-bold py-6'>Data Insights Dashboard</h1>
+    <ul className="menu p-4 w-30 h-full bg-gray-950 text-white">
+       <h1 className='text-lg uppercase text-center font-bold py-6'>Dashboard</h1>
  
 
  
@@ -45,12 +45,12 @@ isInstructor ?
 </>
 }
   
-      
-    </ul>
-    <ul className="menu p-4 w-80 h-1/6 bg-gray-950 text-white mx-auto ">
+       <ul className=" h-1/6 bg-gray-950 text-white mt-10 bottom-0">
      
      <li><Link to='/' >  <FaHome/> Go to home</Link></li>
    </ul>
+    </ul>
+   
   </div>
 </div>
         </div>

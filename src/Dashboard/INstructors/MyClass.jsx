@@ -8,7 +8,7 @@ let {user}=useContext(AuthService)
     let {data:myClass=[],refetch}=useQuery( 
         ['classes'],
        async()=>{
-            let res= await axios.get(`https://summer-camp-server-102h.onrender.com/classes/${user.email}`)
+            let res= await axios.get(`https://fluent-world-server.vercel.app/classes/${user.email}`)
             return res.data
             
                 })
@@ -35,6 +35,7 @@ let {user}=useContext(AuthService)
     </thead>
     <tbody>
    {
+    
    myClass.map((allclass,index)=>   <tr key={allclass._id}>
     <th>{index+1}</th>
     <td>

@@ -18,7 +18,7 @@ let {image,email,name,seat,cname,price, enrolledstudent}=ac
 
         if (user && user.email) {
       let addtoCartClass={ user_id:user.uid, class_id:ac._id , image, name , cname, email:user.email, seat ,price   }
-          fetch('https://summer-camp-server-102h.onrender.com/cartClass',{
+          fetch('https://fluent-world-server.vercel.app/cartClass',{
       method:"POST",
       headers:{
         'content-type':'application/json'
@@ -68,15 +68,14 @@ let {image,email,name,seat,cname,price, enrolledstudent}=ac
 
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card max-w-full lg:max-w-sm  h-full bg-base-100 shadow-xl">
   <figure>      
         <img src={image}  className="rounded-xl h-60" />
 </figure>
   <div className="card-body">
-    <h2 className="card-title">
+    <h2 className="card-title ">
      {cname}
-      <div className="badge badge-neutral"><p> Available seat:  {seat}</p>    </div>
-    </h2>
+    </h2><div className="badge badge-neutral lg:text-xs"><p> Available seat: {seat}</p>    </div>
     <p className="card-title"> Instructor Name: {name}</p> 
           <p> Instructor-Email: {email}</p>
           

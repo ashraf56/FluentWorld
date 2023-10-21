@@ -12,7 +12,7 @@ const MyselectedClass = () => {
   //  let {data: cartClass=[],refetch}=useQuery( 
   //   ['cartClass'],
   //  async()=>{
-  //       let res= await axios.get(`https://summer-camp-server-102h.onrender.com/cartClass/${user?.email}`)
+  //       let res= await axios.get(`https://fluent-world-server.vercel.app/cartClass/${user?.email}`)
 
 
   //       return res.data
@@ -31,7 +31,7 @@ let deleteCArt=(cartclass)=>{
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://summer-camp-server-102h.onrender.com/cartClass/${cartclass._id}`,
+          fetch(`https://fluent-world-server.vercel.app/cartClass/${cartclass._id}`,
           {
             method:"DELETE"
           }

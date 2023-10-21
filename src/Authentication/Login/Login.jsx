@@ -4,6 +4,7 @@ import { FaRegEye ,FaRegEyeSlash} from "react-icons/fa";
 import { useForm } from 'react-hook-form';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   let navigate=useNavigate()
@@ -18,11 +19,13 @@ Login(data.email,data.password)
 .then((userCredential) => {
   const user = userCredential.user;
 console.log(user);
+toast.success('Log in success')
 navigate('/')
 })
 .catch((error) => {
   const errorCode = error.code;
   const errorMessage = error.message;
+  toast.error(errorMessage)
 });
 
 }
@@ -33,7 +36,7 @@ let social=()=>{
     const user = result.user;
     let info={name:user.displayName , email:user.email, photoURL:user.photoURL , role: 'student'}
 
-    fetch('https://summer-camp-server-102h.onrender.com/alluser',{
+    fetch('https://fluent-world-server.vercel.app/alluser',{
         method:"POST"
         ,headers:{
           'content-type': 'application/json'
@@ -57,6 +60,7 @@ let social=()=>{
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    toast.error(errorMessage)
 
   });
 
@@ -101,7 +105,9 @@ let social=()=>{
       </form>
       <div className='mx-auto mb-7'>
         <button className='btn btn-outline  btn-circle ' onClick={social} >G</button>
+
       </div>
+      <Toaster></Toaster>
     </div>
   </div>
 </div>

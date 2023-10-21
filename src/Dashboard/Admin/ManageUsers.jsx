@@ -1,18 +1,32 @@
 import axios from 'axios';
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { useQuery } from 'react-query';
 
 const ManageUsers = () => {
     let {data:users=[],refetch}=useQuery( 
     ['alluser'],
    async()=>{
-        let res= await axios.get('https://summer-camp-server-102h.onrender.com/alluser')
+        let res= await axios.get('https://fluent-world-server.vercel.app/alluser')
         return res.data
         
             })
 
+
+            let reMoveUSer=(alluser)=>{
+              fetch(`https://fluent-world-server.vercel.app/alluser/${alluser._id}`,{
+                method:"DELETE"
+              })
+              .then(res=> res.json())
+              .then(data=> {
+                  console.log(data);
+                  toast.success('user removed')
+                  refetch()
+              })
+              }
+
 let makeAdmin=(alluser)=>{
-fetch(`https://summer-camp-server-102h.onrender.com/alluser/admin/${alluser._id}`,{
+fetch(`https://fluent-world-server.vercel.app/alluser/admin/${alluser._id}`,{
   method:"PATCH"
 })
 .then(res=> res.json())
@@ -22,7 +36,7 @@ fetch(`https://summer-camp-server-102h.onrender.com/alluser/admin/${alluser._id}
 })
 }
 let makeInstructor=(alluser)=>{
-fetch(`https://summer-camp-server-102h.onrender.com/alluser/instructor/${alluser._id}`,{
+fetch(`https://fluent-world-server.vercel.app/alluser/instructor/${alluser._id}`,{
   method:"PATCH"
 })
 .then(res=> res.json())
@@ -73,12 +87,16 @@ fetch(`https://summer-camp-server-102h.onrender.com/alluser/instructor/${alluser
     <td>
       { user?.role === 'instructor'  ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}
     </td>
+    <td>
+     {user?.role === 'admin' ? <button className='btn btn-xs disabled'>Remove</button> :<button className='btn btn-xs' onClick={()=> reMoveUSer(user)} >Remove</button>}
+    </td>
    
   </tr>)
    }
      
     </tbody>
   </table>
+  <Toaster></Toaster>
 </div>
 
 

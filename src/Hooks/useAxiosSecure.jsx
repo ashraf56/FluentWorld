@@ -7,7 +7,7 @@ const useAxiosSecure = () => {
   let navigate = useNavigate(); 
 
   let axiosguard = axios.create({
-    baseURL: 'https://summer-camp-server-102h.onrender.com/', 
+    baseURL: 'https://fluent-world-server.vercel.app/', 
   });
 
   useEffect(() => {

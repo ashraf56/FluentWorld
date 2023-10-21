@@ -5,12 +5,12 @@ const About = () => {
     return (
         <div>
             <div className="hero w-full  min-h-screen " style={{backgroundImage:`url(${img})` , backgroundAttachment:'fixed',backgroundPosition:'center',backgroundRepeat:'no-repeat',backgroundSize:'cover'}} >
-  <div className="hero-overlay bg-opacity-80"></div>
+  <div className="hero-overlay bg-opacity-60"></div>
   <div className="hero-content text-center text-neutral-content">
     
     <div className="">
-      <h1 className="mb-5 text-5xl text-white text-center font-bold">About us</h1>
-      <h1 className="mb-5 text-white  text-2xl text-center font-bold">Building Bridges through Language Learning</h1>
+      <h1 className="mb-5 text-5xl text-white text-center font-bold uppercase">About us</h1>
+      <h1 className="mb-5 text-white  text-2xl text-center font-bold uppercase">Building Bridges through Language Learning</h1>
 
       <div className='max-w-5xl mx-auto'>
         <p className="mb-5 text-center text-white  ">At FluentWorld, we believe that language learning is an empowering journey that opens doors to new opportunities, bridges cultural gaps, and enriches lives. With a passion for languages and a commitment to excellence, we are dedicated to helping individuals of all ages and backgrounds unlock their language potential.

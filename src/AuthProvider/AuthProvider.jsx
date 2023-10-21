@@ -49,7 +49,7 @@ let Login=(email,password)=>{
             setLoading(false);
           
             if (CurrentUser) {
-                axios.post('https://summer-camp-server-102h.onrender.com/jwt',{email:CurrentUser.email})
+                axios.post('https://fluent-world-server.vercel.app/jwt',{email:CurrentUser.email})
                   .then((data)=> {
                     localStorage.setItem('summer-token',data.data.token);
                     setLoading(false);
