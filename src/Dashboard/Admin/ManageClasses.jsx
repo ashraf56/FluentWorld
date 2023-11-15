@@ -35,8 +35,8 @@ const ManageClasses = () => {
                   })
                   }
     return (
-        <div>
-                   <h1 className='text-5xl font-bold text-center uppercase py-5' >Manage All Class</h1>
+        <div className='px-10'>
+                   <h1 className='text-5xl font-bold text-center uppercase py-5 ' >Manage All Class</h1>
 
 
             <div className="overflow-x-auto">
@@ -74,7 +74,7 @@ const ManageClasses = () => {
     { allclass?.status === 'approve'   ? <button className='btn btn-xs mx-2' disabled>approve</button>: <button className='btn btn-xs mx-2' onClick={()=> approve(allclass)} > approve</button> }
     { allclass?.status === 'deny'   ? <button className='btn btn-xs mx-2' disabled>Deny</button>: <button className='btn btn-xs mx-2' onClick={()=> deny(allclass)} >Deny</button> }
 
-   <button className='btn btn-xs mx-2' onClick={()=> deny(allclass)} >Send Feedback</button> 
+   <button className='btn btn-xs mx-2'  >Send Feedback</button> 
     
     </td>
     

@@ -1,10 +1,8 @@
-import React, { useContext, useEffect } from 'react';
-import { FaAd, FaAddressCard, FaBandcamp, FaHome, FaPlusCircle, FaSave, FaUser } from 'react-icons/fa';
-import { useQuery } from 'react-query';
+import {  FaBandcamp, FaHome, FaPlusCircle, FaSave, FaUser } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useADmin from '../Hooks/useADmin';
 import useInstructor from '../Hooks/useInstructor';
-
+import img from '../../public/world.png'
 
 const Dashboard = () => {
 
@@ -14,21 +12,24 @@ const Dashboard = () => {
 
     return (
         <div>
-            <div className="drawer lg:drawer-open">
+            <div className="drawer lg:drawer-open ">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content flex flex-col items-center mt-4">
    <Outlet/>
     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   
   </div> 
-  <div className="drawer-side min-h-full">
+  <div className="drawer-side  min-h-full lg:min-h-0 ">
     <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
   
     <ul className="menu p-4 w-30 h-full bg-gray-950 text-white">
-       <h1 className='text-lg uppercase text-center font-bold py-6'>Dashboard</h1>
+      <div className='avatar w-16 justify-center items-center mx-auto'>
+<img src={img} alt="" srcset="" /> 
+    
+      
  
-
- 
+  </div>
+  <h1 className='text-lg uppercase text-center font-bold pb-5'>Dashboard</h1>
 {
 isInstructor ?
 
