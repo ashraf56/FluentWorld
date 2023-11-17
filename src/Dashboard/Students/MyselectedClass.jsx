@@ -6,7 +6,6 @@ import useCartClass from '../../Hooks/useCartClass';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 
 const MyselectedClass = () => {
-
    let [cartClass,refetch]=useCartClass()
   //  let {user}=useContext(AuthService)
   //  let {data: cartClass=[],refetch}=useQuery( 

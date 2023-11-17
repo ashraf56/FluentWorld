@@ -30,7 +30,7 @@ let {image,email,name,seat,cname,price, enrolledstudent}=ac
             console.log(data);
             if (data.message === 'already exist') {
               Swal.fire({
-                position: 'bottom-end',
+                position: 'center',
                 icon: 'warning',
                 title: 'You Already Added This Class',
                 text: 'The class you are trying to add has already been added to the cart.',
@@ -40,7 +40,7 @@ let {image,email,name,seat,cname,price, enrolledstudent}=ac
             } 
           else if (data.insertedId ) {
               Swal.fire({
-                position: 'bottom-end',
+                position: 'center',
                 icon: 'success',
                 title: 'Added to cart',
                 showConfirmButton: false,

@@ -6,7 +6,7 @@ const TopInstructor = () => {
     let {data:topinstructor=[],refetch}=useQuery( 
         ['instructor'],
        async()=>{
-            let res= await axios.get(`https://fluent-world-server.vercel.app/alluser/instructor`)
+            let res= await axios.get(`https://fluent-world-server.vercel.app/user/instructor`)
             return res.data
             
                 })

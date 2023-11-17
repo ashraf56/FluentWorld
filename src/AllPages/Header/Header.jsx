@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import useCartClass from '../../Hooks/useCartClass';
+import useADmin from '../../Hooks/useADmin';
+import useInstructor from '../../Hooks/useInstructor';
 
 const Header = () => {
   let{user,Signout}=useContext(AuthService)
-  let[cartClass]=useCartClass()
+  let [isAdmin]= useADmin()
+  let [isInstructor]= useInstructor()
   const [themes, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -33,9 +35,11 @@ useEffect(() => {
   document.querySelector("html").setAttribute("data-theme", Theme);
 }, [themes]);
 
+
+
     return (
-        <div className='max-w-screen-xl mx-auto'>
-            <div className="navbar bg-base-100">
+        <div className={`max-w-screen-2xl  mx-auto `}>
+            <div className="navbar "  >
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -56,7 +60,10 @@ useEffect(() => {
       <li><Link>Home</Link> </li>
       <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link to='/Classes'>Classes</Link> </li>
-      {user && <li><Link to='dashboard/dashhome'>Dashboard </Link> </li>}
+      { isInstructor ? <li><Link to='dashboard/addclass'>Dashboard </Link> </li> 
+    :  isAdmin ?   <li><Link to='dashboard/analaysis'>Dashboard </Link> </li> 
+    : <li><Link to='dashboard/info'>Dashboard </Link> </li> 
+    }
     
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
 

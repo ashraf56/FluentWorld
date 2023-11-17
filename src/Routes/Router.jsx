@@ -16,6 +16,8 @@ import PrivateSecure from "./PrivateSecure";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import DashBoardHome from "../AllPages/DashBoardHome";
+import Analaysis from "../Dashboard/Admin/Analaysis";
+import YourInfo from "../Dashboard/Students/YourInfo";
 
 const router = createBrowserRouter([
     {
@@ -71,6 +73,10 @@ element: <Classes></Classes>
       element: <AdminRoute> <ManageClasses/></AdminRoute>   
     },
     {
+      path:'analaysis',
+      element: <AdminRoute> <Analaysis/></AdminRoute>   
+    },
+    {
       path:'addclass',
       element:<InstructorRoute><AddClass/>   </InstructorRoute> 
     },
@@ -85,6 +91,10 @@ element: <Classes></Classes>
     {
       path:'mySclass',
       element:<PrivateSecure>   <MyselectedClass></MyselectedClass></PrivateSecure>
+    },
+    {
+      path:'info',
+      element:<PrivateSecure>   <YourInfo/></PrivateSecure>
     },
   ]
 }
