@@ -7,7 +7,7 @@ const Banner = () => {
         <div style={{backgroundImage:`url(${imgs2})`,backgroundSize:'cover', }}>
           
 <div className="hero min-h-screen " >
-  <div className="hero-content flex-col-reverse lg:flex-row-reverse">
+  <div className="hero-content flex-col-reverse lg:flex-row-reverse text-black">
 
     <img src={imgs1} className='  md:max-w-5xl'   />
   
