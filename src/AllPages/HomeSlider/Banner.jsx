@@ -1,10 +1,12 @@
 import React from 'react';
 import imgs1 from '../../assets/9397253.png'
+import imgs2 from '../../assets/3d-background-with-white-cubes.jpg'
+
 const Banner = () => {
     return (
-        <div >
+        <div style={{backgroundImage:`url(${imgs2})`,backgroundSize:'cover', }}>
           
-<div className="hero min-h-screen bg-base-200">
+<div className="hero min-h-screen " >
   <div className="hero-content flex-col-reverse lg:flex-row-reverse">
 
     <img src={imgs1} className='  md:max-w-5xl'   />
