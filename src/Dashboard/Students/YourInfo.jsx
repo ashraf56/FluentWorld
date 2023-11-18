@@ -4,7 +4,7 @@ import { FaMailBulk, FaUser } from 'react-icons/fa';
 import useCartClass from '../../Hooks/useCartClass';
 
 const YourInfo = () => {
-    let [Userinfo,refetch]= useUserInfo()
+    let [Userinfo]= useUserInfo()
    let [cartClass] = useCartClass()
 console.log(cartClass);
 
@@ -66,15 +66,16 @@ console.log(cartClass);
 cartClass.map(ct => (
 <div className="alert " >
 <div className="avatar ">
-  <div className="w-16 justify-center lg:justify-start ">
+  <div className="w-8 justify-center lg:justify-start ">
     <img src={ct.image} className='rounded-full'/>
   </div>
 </div>
   <div>
    
-    <p className='text-lg font-semibold text-red-800'>{ct.cname}</p> 
+    <p className='text-md font-semibold text-red-800'>{ct.cname}</p> 
     <p>{ct.name}</p>
   </div>
+  <button className='text-green-600'>running ...</button>
 </div>
 ))
   }

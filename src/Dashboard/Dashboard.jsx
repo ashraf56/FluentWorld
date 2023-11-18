@@ -3,12 +3,13 @@ import { Link, Outlet } from 'react-router-dom';
 import useADmin from '../Hooks/useADmin';
 import useInstructor from '../Hooks/useInstructor';
 import img from '../../public/world.png'
+import useUserInfo from '../Hooks/useUser';
 
 const Dashboard = () => {
 
   let [isadmin]=useADmin();
   let [isInstructor]=useInstructor()
-
+ let [Userinfo]=useUserInfo()
 
     return (
         <div>
@@ -34,6 +35,7 @@ const Dashboard = () => {
 isInstructor ?
 
 <>
+<li><Link to='/dashboard/insinfo'> <FaHome/> Overview </Link></li>
 <li><Link to='/dashboard/addclass'> <FaUser/> Add class</Link></li>
      <li><Link to='/dashboard/myclass'> <FaBandcamp/> My  Classes</Link></li> 
 </> :
@@ -48,8 +50,9 @@ isInstructor ?
     
       
       </>
-: 
- <> <li><Link to='/dashboard/info'> <FaUserAlt/> Your Info </Link></li>
+: Userinfo.role==='student' &&
+ <>
+  <li><Link to='/dashboard/info'> <FaUserAlt/> Your Info </Link></li>
        <li><Link to='/dashboard/mySclass'> <FaPlusCircle/> My Selected Classes</Link></li>
       
 <li><Link to='/dashboard/myEclass'> <FaSave/> My Enrolled Classes</Link></li>

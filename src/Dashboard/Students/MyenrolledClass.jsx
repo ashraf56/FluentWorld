@@ -3,10 +3,9 @@ import React from 'react';
 const MyenrolledClass = () => {
     return (
         <div className='hero'>
-            <h1 className='text-5xl font-bold text-center uppercase py-5' > my Enrolled  
-             classes</h1>
+            
             <div className='hero-content'>
-
+<img src="https://img.freepik.com/free-vector/flat-design-no-data-illustration_23-2150527124.jpg?w=740&t=st=1700287592~exp=1700288192~hmac=c6ff6d0a950de7d968667d172e8eb8d70295b46030faa448f00b70631c0e42af" className='w-96'/>
             </div>
           
         </div>

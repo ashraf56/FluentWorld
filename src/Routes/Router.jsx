@@ -18,6 +18,7 @@ import InstructorRoute from "./InstructorRoute";
 import DashBoardHome from "../AllPages/DashBoardHome";
 import Analaysis from "../Dashboard/Admin/Analaysis";
 import YourInfo from "../Dashboard/Students/YourInfo";
+import InstructorInfo from "../Dashboard/INstructors/InstructorInfo";
 
 const router = createBrowserRouter([
     {
@@ -83,6 +84,10 @@ element: <Classes></Classes>
     {
       path:'myclass',
       element: <InstructorRoute> <MyClass/> </InstructorRoute>  
+    },
+    {
+      path:'insinfo',
+      element: <InstructorRoute> <InstructorInfo/> </InstructorRoute>  
     },
     {
       path:'myEclass',

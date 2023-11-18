@@ -50,20 +50,19 @@ reset()
     return (
         <div>
         
-            <div className="hero min-h-screen ">
-  <div className="hero-content flex-col ">
-    <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold pb-5">ADD A CLASS</h1>
-   
-    </div>
-    <div className="card  w-full shadow-2xl bg-base-100">
+            <div className=" min-h-screen ">
+  <div className="  justify-center items-center ">
+   <div>
+    <h1 className='uppercase font-bold text-lg '>Add a class</h1>
+   </div>
+    <div className="card mx-auto max-w-xl shadow-2xl bg-base-100">
         <form   onSubmit={handleSubmit(onSubmit)}>
       <div  className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered"  {...register("email", { required: true})}defaultValue={user?.email} readOnly />
+          <input type="email" placeholder="email" className="input input-bordered "  {...register("email", { required: true})}defaultValue={user?.email} readOnly />
         </div>
         <div className="form-control">
           <label className="label">
@@ -87,7 +86,7 @@ reset()
           <label className="label">
             <span className="label-text">ClassImage</span>
           </label>
-          <input type="file" {...register("image", { required: true})}className="file-input file-input-bordered w-full max-w-xs" />
+          <input type="file" {...register("image", { required: true})}className="file-input file-input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">

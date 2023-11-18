@@ -4,11 +4,13 @@ import { AuthService } from '../../AuthProvider/AuthProvider';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import useADmin from '../../Hooks/useADmin';
 import useInstructor from '../../Hooks/useInstructor';
+import useUserInfo from '../../Hooks/useUser';
 
 const Header = () => {
   let{user,Signout}=useContext(AuthService)
   let [isAdmin]= useADmin()
   let [isInstructor]= useInstructor()
+  let [Userinfo]=useUserInfo()
   const [themes, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -60,9 +62,9 @@ useEffect(() => {
       <li><Link>Home</Link> </li>
       <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link to='/Classes'>Classes</Link> </li>
-      { isInstructor ? <li><Link to='dashboard/addclass'>Dashboard </Link> </li> 
+      { isInstructor ? <li><Link to='dashboard/insinfo'>Dashboard </Link> </li> 
     :  isAdmin ?   <li><Link to='dashboard/analaysis'>Dashboard </Link> </li> 
-    : <li><Link to='dashboard/info'>Dashboard </Link> </li> 
+    : Userinfo.role === 'student' && <li><Link to='dashboard/info'>Dashboard </Link> </li> 
     }
     
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
