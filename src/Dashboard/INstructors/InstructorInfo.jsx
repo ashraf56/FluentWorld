@@ -33,7 +33,7 @@ let {user}=useContext(AuthService)
   Overview
 </h1>
 
-<div className='grid grid-cols-2 gap-2 my-3'>
+<div className='grid grid-cols-1 lg:grid-cols-2 gap-2 my-3'>
 
 
 <div className='grid  gap-1  mt-2 max-w-full'>
@@ -64,7 +64,7 @@ let {user}=useContext(AuthService)
 </div>
 </div>
 
-<div className=' grid grid-cols-1 mt-4 px-2 gap-1 '>
+<div className=' grid grid-cols-1 mt-4 px-2  '>
 <div className="card bg-primary text-primary-content">
   <div className="card-body">
     <h2 className="card-title text-4xl">0</h2>
@@ -72,11 +72,9 @@ let {user}=useContext(AuthService)
     
   </div>
 </div>
-  <h1>
-          Feedbacks 
-        </h1>
+
     <div className='overflow-x-auto h-96'> 
-  
+ 
     {
         myClass.map(m => (<>
        
