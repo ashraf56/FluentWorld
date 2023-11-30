@@ -88,7 +88,7 @@ fetch(`https://fluent-world-server.vercel.app/alluser/instructor/${alluser._id}`
       { user?.role === 'instructor'  ? <button className='btn btn-xs' disabled>Make Instructor</button>: <button className='btn btn-xs' onClick={()=> makeInstructor(user)} >Make Instructor</button>}
     </td>
     <td>
-     {user?.role === 'admin' ? <button className='btn btn-xs disabled'>Remove</button> :<button className='btn btn-xs' onClick={()=> reMoveUSer(user)} >Remove</button>}
+     {user?.role === 'admin' && user?.email=='ashrafulfahim07@gmail.com' ? <button className='btn btn-xs disabled btn-neutral'>Remove</button> :<button className='btn btn-xs' onClick={()=> reMoveUSer(user)} >Remove</button>}
     </td>
    
   </tr>)
