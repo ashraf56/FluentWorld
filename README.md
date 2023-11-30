@@ -9,7 +9,12 @@ FluentWorld is a dynamic MERN Stack web application designed to empower language
 - User can see their information in the dashboard. They can edit their Info.
 - Also admin and trainer can manage their dashboard.    
 - FluentWorld is fully responsive, ensuring a seamless experience on desktop, tablet, and mobile devices.
-
+# Log in as Admin
+- admin :ash1@gmail.com
+- pass: 12@A34
+# Log in as Instructor
+- ins: ash@gmail.com
+- pass:12@A34
 
 ## Technology Used
 - React JS
