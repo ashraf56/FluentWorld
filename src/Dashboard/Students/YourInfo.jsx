@@ -1,12 +1,11 @@
 import React from 'react';
 import useUserInfo from '../../Hooks/useUser';
-import { FaMailBulk, FaUser } from 'react-icons/fa';
 import useCartClass from '../../Hooks/useCartClass';
 
 const YourInfo = () => {
     let [Userinfo]= useUserInfo()
    let [cartClass] = useCartClass()
-console.log(cartClass);
+
 
     return (
         <div className=' '>
@@ -66,7 +65,7 @@ console.log(cartClass);
 cartClass.map(ct => (
 <div className="alert " >
 <div className="avatar ">
-  <div className="w-8 justify-center lg:justify-start ">
+  <div className="w-8 justify-center lg:justify-start " key={ct._id}>
     <img src={ct.image} className='rounded-full'/>
   </div>
 </div>

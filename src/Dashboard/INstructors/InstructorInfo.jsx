@@ -21,7 +21,11 @@ let {user}=useContext(AuthService)
               {
     instructors.map(i=> (<> 
         <div role="alert" className="alert shadow-lg">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <div className="avatar ">
+  <div className="w-16 justify-center lg:justify-start ">
+    <img src={i?.photoURL} className='rounded-full'/>
+  </div>
+</div>
   <div>
     <h3 className="font-bold">{i?.name}</h3>
     <div className="text-xs">Welcome to {i?.role} dashboard</div>
@@ -40,7 +44,7 @@ let {user}=useContext(AuthService)
 <div className="card bg-primary text-primary-content">
   <div className="card-body">
     <div>
-        <img src={i?.photoURL} alt="" srcset="" />
+        <img src={i?.photoURL}  />
     </div>
     <h2 className="card-title">{i?.name}</h2>
    <div>

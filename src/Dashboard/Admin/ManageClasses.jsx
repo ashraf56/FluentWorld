@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
-import ManageUsers from './ManageUsers';
 
 const ManageClasses = () => {
 
@@ -68,13 +67,17 @@ const ManageClasses = () => {
      </td>
     <td>{allclass.name}</td>
     <td>{allclass.email}</td>
-    <td>{allclass.cname}</td>
-    <td>{allclass.status}</td>
-    <td className='flex '>
+    <td className='col-span-1'>{allclass.cname}</td>
+    {allclass?.status === "approve" ? (
+     <td className='text-green-700 text-xs'>Approved</td>):(<td className='text-red-700 text-xs'>Denied</td>)
+    }
+  
+    <td >
+    <div className='flex '>
     { allclass?.status === 'approve'   ? <button className='btn btn-xs mx-2' disabled>approve</button>: <button className='btn btn-xs mx-2' onClick={()=> approve(allclass)} > approve</button> }
     { allclass?.status === 'deny'   ? <button className='btn btn-xs mx-2' disabled>Deny</button>: <button className='btn btn-xs mx-2' onClick={()=> deny(allclass)} >Deny</button> }
 
-   <button className='btn btn-xs mx-2'  >Send Feedback</button> 
+    </div>
     
     </td>
     

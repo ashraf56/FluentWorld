@@ -1,4 +1,4 @@
-import {  FaBandcamp, FaHome, FaInfo, FaPlusCircle, FaSave, FaUser, FaUserAlt } from 'react-icons/fa';
+import {  FaBandcamp, FaHome, FaPlusCircle, FaSave, FaUser, FaUserAlt } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useADmin from '../Hooks/useADmin';
 import useInstructor from '../Hooks/useInstructor';
@@ -42,7 +42,6 @@ isInstructor ?
  isadmin ? 
 
 <>
-<li><Link to='/dashboard/analaysis'> <FaInfo/> Top analaysis</Link></li>
 <li><Link to='/dashboard/users'> <FaUser/> All user</Link></li>
 
       <li><Link to='/dashboard/manageClass'> <FaBandcamp/>MAnage Classes</Link></li> 
@@ -50,7 +49,7 @@ isInstructor ?
     
       
       </>
-: Userinfo.role==='student' &&
+: Userinfo &&
  <>
   <li><Link to='/dashboard/info'> <FaUserAlt/> Your Info </Link></li>
        <li><Link to='/dashboard/mySclass'> <FaPlusCircle/> My Selected Classes</Link></li>

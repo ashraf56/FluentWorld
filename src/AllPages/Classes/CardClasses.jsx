@@ -68,9 +68,9 @@ let {image,email,name,seat,cname,price, enrolledstudent}=ac
 
     return (
         <div>
-            <div className="card max-w-full lg:max-w-sm  h-full bg-base-100 shadow-xl">
+            <div className="card max-w-full lg:max-w-lg 2xl:max-w-full  h-full bg-base-100 shadow-xl">
   <figure>      
-        <img src={image}  className="rounded-xl h-60" />
+        <img src={image}  className="rounded-xl w-[500px] h-[240px] object-contain" />
 </figure>
   <div className="card-body">
     <h2 className="card-title ">

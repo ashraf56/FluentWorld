@@ -12,7 +12,7 @@ const Classes = () => {
     return (
         <div >
             <h1 className='text-5xl font-bold text-center uppercase pt-8' >All Classes</h1>
-<div className='grid md:grid-cols-3 mx-12 gap-3  my-24'>
+<div className='grid md:grid-cols-2 lg:grid-cols-3 mx-12 gap-3 2xl:grid-cols-4 my-24'>
 {approveclass.length === 0 ? (
     <div className="col-span-3 flex justify-center items-center h-full">
     <div className="w-max">

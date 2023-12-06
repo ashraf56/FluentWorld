@@ -57,16 +57,16 @@ reset()
 
     return (
         <div>
-            <div className="hero    min-h-screen bg-base">
-  <div className="hero-content w-2/5 ">
+            <div className="  hero  min-h-screen bg-base">
+  <div className="hero-content w-full max-w-xl ">
    
-    <div className="card  w-full  shadow-2xl bg-base-100">
+    <div className="card  w-full max-w-full  shadow-2xl bg-base-100">
       <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input type="text" placeholder="name" {...register("displayName")} className="input input-bordered" />
+          <input type="text" placeholder="name" {...register("displayName")} className="input input-bordered " />
         </div>
         <div className="form-control">
           <label className="label">

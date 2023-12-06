@@ -51,7 +51,10 @@ useEffect(() => {
       <li><Link>Home</Link> </li>
       <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link to='/Classes'> Classes</Link> </li>
-      {user && <li><Link to='dashboard/dashhome'>Dashboard </Link> </li>}
+      { isInstructor ? <li><Link to='dashboard/insinfo'>Dashboard </Link> </li> 
+    :  isAdmin ?   <li><Link to='dashboard/users'>Dashboard </Link> </li> 
+    :  <li><Link to='dashboard/info'>Dashboard </Link> </li> 
+    }
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
       </ul>
     </div>
@@ -63,8 +66,8 @@ useEffect(() => {
       <li><Link to='/instruc' >Instructors</Link> </li>
       <li><Link to='/Classes'>Classes</Link> </li>
       { isInstructor ? <li><Link to='dashboard/insinfo'>Dashboard </Link> </li> 
-    :  isAdmin ?   <li><Link to='dashboard/analaysis'>Dashboard </Link> </li> 
-    : Userinfo.role === 'student' && <li><Link to='dashboard/info'>Dashboard </Link> </li> 
+    :  isAdmin ?   <li><Link to='dashboard/users'>Dashboard </Link> </li> 
+    : user  && <li><Link to='dashboard/info'>Dashboard </Link> </li> 
     }
     
       {user  ?  <li><Link onClick={handleout}>Logout</Link> </li>:  <li><Link to='/login'>Login </Link> </li>}
