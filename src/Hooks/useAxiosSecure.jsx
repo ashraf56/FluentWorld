@@ -1,15 +1,11 @@
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
-
 const useAxiosSecure = () => {
-  let navigate = useNavigate(); 
-
+  let navigate = useNavigate();
   let axiosguard = axios.create({
-    baseURL: 'https://fluent-world-server.vercel.app/', 
+    baseURL: 'https://fluent-world-server.vercel.app/',
   });
-
   useEffect(() => {
     axiosguard.interceptors.request.use((config) => {
       let token = localStorage.getItem('summer-token');
@@ -18,7 +14,6 @@ const useAxiosSecure = () => {
       }
       return config;
     });
-
     axiosguard.interceptors.response.use(
       (response) => response,
       async (error) => {
@@ -28,9 +23,7 @@ const useAxiosSecure = () => {
         return Promise.reject(error);
       }
     );
-  }, [ navigate, axiosguard]);
-
+  }, [navigate, axiosguard]);
   return [axiosguard];
 };
-
 export default useAxiosSecure;

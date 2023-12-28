@@ -20,86 +20,86 @@ import YourInfo from "../Dashboard/Students/YourInfo";
 import InstructorInfo from "../Dashboard/INstructors/InstructorInfo";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children:[
-{
-path:'/',
-element:<Home></Home>
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
 
-},
-{
-path:'/login',
-element:<Login></Login>
-
-},
-{
-path:'/signup',
-element:<Register></Register>
-
-},
-{
-path:'/instruc',
-element: <Instructors></Instructors>,
-
-},
-{
-path:'/Classes',
-element: <Classes></Classes>
-
-},
-
-
-
-      ]
-    },
-
-{
-  path:'dashboard',
-  element:<Dashboard></Dashboard>,
-  children:[
-    {
-      path:'dashhome',
-      element:<DashBoardHome></DashBoardHome>
-      
       },
-    {
-      path:'users',
-      element:<AdminRoute> <ManageUsers/></AdminRoute> 
-    },
-    {
-      path:'manageClass',
-      element: <AdminRoute> <ManageClasses/></AdminRoute>   
-    },
-  
-    {
-      path:'addclass',
-      element:<InstructorRoute><AddClass/>   </InstructorRoute> 
-    },
-    {
-      path:'myclass',
-      element: <InstructorRoute> <MyClass/> </InstructorRoute>  
-    },
-    {
-      path:'insinfo',
-      element: <InstructorRoute> <InstructorInfo/> </InstructorRoute>  
-    },
-    {
-      path:'myEclass',
-      element:<PrivateSecure> <MyenrolledClass></MyenrolledClass>   </PrivateSecure> 
-    },
-    {
-      path:'mySclass',
-      element:<PrivateSecure>   <MyselectedClass></MyselectedClass></PrivateSecure>
-    },
-    {
-      path:'info',
-      element:<PrivateSecure>   <YourInfo/></PrivateSecure>
-    },
-  ]
-}
+      {
+        path: '/login',
+        element: <Login></Login>
 
-  ]);
+      },
+      {
+        path: '/signup',
+        element: <Register></Register>
 
-  export default router;
+      },
+      {
+        path: '/instruc',
+        element: <Instructors></Instructors>,
+
+      },
+      {
+        path: '/Classes',
+        element: <Classes></Classes>
+
+      },
+
+
+
+    ]
+  },
+
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: 'dashhome',
+        element: <DashBoardHome></DashBoardHome>
+
+      },
+      {
+        path: 'users',
+        element: <AdminRoute> <ManageUsers /></AdminRoute>
+      },
+      {
+        path: 'manageClass',
+        element: <AdminRoute> <ManageClasses /></AdminRoute>
+      },
+
+      {
+        path: 'addclass',
+        element: <InstructorRoute><AddClass />   </InstructorRoute>
+      },
+      {
+        path: 'myclass',
+        element: <InstructorRoute> <MyClass /> </InstructorRoute>
+      },
+      {
+        path: 'insinfo',
+        element: <InstructorRoute> <InstructorInfo /> </InstructorRoute>
+      },
+      {
+        path: 'myEclass',
+        element: <PrivateSecure> <MyenrolledClass></MyenrolledClass>   </PrivateSecure>
+      },
+      {
+        path: 'mySclass',
+        element: <PrivateSecure>   <MyselectedClass></MyselectedClass></PrivateSecure>
+      },
+      {
+        path: 'info',
+        element: <PrivateSecure>   <YourInfo /></PrivateSecure>
+      },
+    ]
+  }
+
+]);
+
+export default router;
