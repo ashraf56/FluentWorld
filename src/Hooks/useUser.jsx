@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 import { AuthService } from '../AuthProvider/AuthProvider';
 import useAxiosSecure from './useAxiosSecure';
 import { useQuery } from 'react-query';
-const useUserInfo = () => {
+const useUser = () => {
   let { user } = useContext(AuthService)
   let [axiosguard] = useAxiosSecure();
-  const { refetch, data: Userinfo = [] } = useQuery({
+  const { refetch, data: userinfo = [] } = useQuery({
     queryKey: ['Userinfo', user?.email],
     enabled: !!user?.email && !!localStorage.getItem("summer-token"),
     queryFn: async () => {
@@ -13,6 +13,6 @@ const useUserInfo = () => {
       return res.data;
     },
   })
-  return [Userinfo, refetch]
+  return [userinfo, refetch]
 };
-export default useUserInfo;
+export default useUser;

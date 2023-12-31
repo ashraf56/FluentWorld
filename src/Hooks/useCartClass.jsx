@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthService } from '../AuthProvider/AuthProvider';
 import useAxiosSecure from './useAxiosSecure';
 import { useQuery } from 'react-query';
+import axios from 'axios';
 
 const useCartClass = () => {
   let { user } = useContext(AuthService)

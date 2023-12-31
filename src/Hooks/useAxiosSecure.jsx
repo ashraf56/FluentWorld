@@ -1,11 +1,12 @@
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-const useAxiosSecure = () => {
-  let navigate = useNavigate();
   let axiosguard = axios.create({
     baseURL: 'https://fluent-world-server.vercel.app/',
   });
+const useAxiosSecure = () => {
+  let navigate = useNavigate();
+
   useEffect(() => {
     axiosguard.interceptors.request.use((config) => {
       let token = localStorage.getItem('summer-token');

@@ -4,16 +4,16 @@ const About = () => {
   let img = 'https://anschool.net/en/common/img/ikebukuro/slide02.jpg'
   return (
     <div>
-      <div className="hero w-full  min-h-screen " style={{ backgroundImage: `url(${img})`, backgroundAttachment: 'fixed', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} >
-        <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero w-full  min-h-screen p-5" style={{ backgroundImage: `url(${img})`, backgroundAttachment: 'fixed', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} >
+        <div className="hero-overlay bg-opacity-60   glass max-w-7xl lg:h-[600px] mx-auto"></div>
         <div className="hero-content text-center text-neutral-content">
 
           <div className="">
-            <h1 className="mb-5 text-5xl text-white text-center font-bold uppercase">About us</h1>
-            <h1 className="mb-5 text-white  text-2xl text-center font-bold uppercase">Building Bridges through Language Learning</h1>
+            <h1 className="mb-5 text-5xl text-black text-center font-bold uppercase">About us</h1>
+            <h1 className="mb-5 text-black text-2xl text-center font-bold uppercase">Building Bridges through Language Learning</h1>
 
             <div className='max-w-5xl mx-auto'>
-              <p className="mb-5 text-center text-white  ">At FluentWorld, we believe that language learning is an empowering journey that opens doors to new opportunities, bridges cultural gaps, and enriches lives. With a passion for languages and a commitment to excellence, we are dedicated to helping individuals of all ages and backgrounds unlock their language potential.
+              <p className="mb-5 text-center text-black  ">At FluentWorld, we believe that language learning is an empowering journey that opens doors to new opportunities, bridges cultural gaps, and enriches lives. With a passion for languages and a commitment to excellence, we are dedicated to helping individuals of all ages and backgrounds unlock their language potential.
                 Our experienced team of language instructors brings expertise and enthusiasm to every class, providing a dynamic and engaging learning experience. We offer a wide range of language courses tailored to meet the needs and goals of our diverse student community. Whether you're a beginner or an advanced learner, we provide a supportive and immersive environment that nurtures your language skills.
                 At FluentWorld, we embrace a communicative and interactive approach to language learning. Our curriculum focuses not only on grammar and vocabulary but also on developing practical language skills for real-world contexts. We believe that language learning goes beyond textbooks, and that's why we offer cultural immersion programs, conversation practice sessions, and opportunities for language exchanges to enhance your linguistic and cultural understanding.
 

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useQuery } from "react-query";
 import { AuthService } from "../AuthProvider/AuthProvider";
 import useAxiosSecure from "./useAxiosSecure";
+import axios from "axios";
 const instructordata = () => {
   let { user } = useContext(AuthService)
   let [axiosguard] = useAxiosSecure();

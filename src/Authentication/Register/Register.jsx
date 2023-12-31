@@ -54,6 +54,9 @@ const Register = () => {
         <div className="hero-content w-full max-w-xl ">
           <div className="card  w-full max-w-full  shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+              <div>
+                <h1 className='font-bold text-center uppercase'>Sign Up now</h1>
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -64,7 +67,7 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="email" placeholder="email" {...register("email", { required: true })} className="input input-bordered" />
+                <input type="email" placeholder="email" {...register("email", { required: 'Email is required ' })} className="input input-bordered" />
               </div>
               <div className="form-control">
                 <label className="label">
@@ -96,6 +99,7 @@ const Register = () => {
               </div>
               <div className="form-control mt-6">
                 <button className="btn  btn-outline">Register</button>
+                {err && <p className='text-red-700 text-sm'>{err}</p>}
                 {errors.password?.type === 'pattern' && <p className='text-red-700 text-sm'>Special latter or Capital latter missed</p>}
                 {errors.password?.type === 'minLength' && <p className='text-red-700 text-sm'>Password Length should be  more than 6 </p>}
                 {errors.cpassword && <span className='text-red-700 text-sm' >{errors.cpassword?.message}</span>}

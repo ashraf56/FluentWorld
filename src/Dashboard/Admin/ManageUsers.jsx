@@ -59,7 +59,12 @@ const ManageUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {
+            {users.length === 0 ?
+              <div className="col-span-3 flex justify-center items-center h-full">
+                <div className="w-max">
+                  <span className="loading loading-dots loading-lg"></span>
+                </div>
+              </div> :
               users.map((user, index) => <tr key={user._id}>
                 <th>{index + 1}</th>
                 <td>

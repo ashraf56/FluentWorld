@@ -15,7 +15,7 @@ const ManageClasses = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+
         refetch()
       })
   }
@@ -25,7 +25,7 @@ const ManageClasses = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+
         refetch()
       })
   }
@@ -47,7 +47,13 @@ const ManageClasses = () => {
             </tr>
           </thead>
           <tbody>
-            {
+            {allClass.length === 0 ?
+              <div className="col-span-3 flex justify-center items-center h-full">
+                <div className="w-max">
+                  <span className="loading loading-dots loading-lg"></span>
+                </div>
+              </div>
+              :
               allClass.map((allclass, index) => <tr key={allclass._id}>
                 <th>{index + 1}</th>
                 <td>

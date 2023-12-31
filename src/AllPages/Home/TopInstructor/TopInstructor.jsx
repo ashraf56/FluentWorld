@@ -11,7 +11,7 @@ const TopInstructor = () => {
     })
   return (
     <div className='mb-16'>
-      <h1 className='text-5xl font-bold text-center uppercase py-10' >Top <span className='bg-black text-white'>Instructor</span></h1>
+      <h1 className='text-5xl font-bold text-center uppercase py-10 bg-clip-text text-transparent  bg-gradient-to-tl from-[#3952f5]  to-[#fc4778]' >Top Instructor</h1>
       <div className='grid md:grid-cols-3 mx-12 gap-3 '>
         {
           topinstructor.length === 0 ? (

@@ -2,15 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthService } from '../../AuthProvider/AuthProvider';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import useADmin from '../../Hooks/useADmin';
-import useInstructor from '../../Hooks/useInstructor';
-import useUserInfo from '../../Hooks/useUser';
+import useUser from '../../Hooks/useUser';
+
 
 const Header = () => {
   let { user, Signout } = useContext(AuthService)
-  let [isAdmin] = useADmin()
-  let [isInstructor] = useInstructor()
-  let [Userinfo] = useUserInfo()
+  let [userinfo] = useUser()
   const [themes, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
@@ -46,23 +43,21 @@ const Header = () => {
               <li><Link>Home</Link> </li>
               <li><Link to='/instruc' >Instructors</Link> </li>
               <li><Link to='/Classes'> Classes</Link> </li>
-              {isInstructor ? <li><Link to='dashboard/insinfo'>Dashboard </Link> </li>
-                : isAdmin ? <li><Link to='dashboard/users'>Dashboard </Link> </li>
-                  : <li><Link to='dashboard/info'>Dashboard </Link> </li>
+              {
+                user && userinfo && <li><Link to='dashboard/info'>Dashboard </Link> </li>
               }
               {user ? <li><Link onClick={handleout}>Logout</Link> </li> : <li><Link to='/login'>Login </Link> </li>}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xs  md:text-2xl uppercase">FluentWorld</a>
+          <a className="btn btn-ghost text-xs  md:text-2xl font-bold uppercase bg-clip-text text-transparent  bg-gradient-to-r from-[#3952f5]  to-[#fc4778]">Fluent World </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 font-bold uppercase ">
             <li><Link>Home</Link> </li>
             <li><Link to='/instruc' >Instructors</Link> </li>
             <li><Link to='/Classes'>Classes</Link> </li>
-            {isInstructor ? <li><Link to='dashboard/insinfo'>Dashboard </Link> </li>
-              : isAdmin ? <li><Link to='dashboard/users'>Dashboard </Link> </li>
-                : user && <li><Link to='dashboard/info'>Dashboard </Link> </li>
+            {
+              user && userinfo && <li><Link to='dashboard/info'>Dashboard </Link> </li>
             }
             {user ? <li><Link onClick={handleout}>Logout</Link> </li> : <li><Link to='/login'>Login </Link> </li>}
           </ul>

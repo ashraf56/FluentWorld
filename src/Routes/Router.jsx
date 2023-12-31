@@ -15,9 +15,7 @@ import Classes from "../AllPages/Classes/Classes";
 import PrivateSecure from "./PrivateSecure";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
-import DashBoardHome from "../AllPages/DashBoardHome";
 import YourInfo from "../Dashboard/Students/YourInfo";
-import InstructorInfo from "../Dashboard/INstructors/InstructorInfo";
 
 const router = createBrowserRouter([
   {
@@ -60,11 +58,6 @@ const router = createBrowserRouter([
     element: <Dashboard></Dashboard>,
     children: [
       {
-        path: 'dashhome',
-        element: <DashBoardHome></DashBoardHome>
-
-      },
-      {
         path: 'users',
         element: <AdminRoute> <ManageUsers /></AdminRoute>
       },
@@ -81,10 +74,7 @@ const router = createBrowserRouter([
         path: 'myclass',
         element: <InstructorRoute> <MyClass /> </InstructorRoute>
       },
-      {
-        path: 'insinfo',
-        element: <InstructorRoute> <InstructorInfo /> </InstructorRoute>
-      },
+      
       {
         path: 'myEclass',
         element: <PrivateSecure> <MyenrolledClass></MyenrolledClass>   </PrivateSecure>

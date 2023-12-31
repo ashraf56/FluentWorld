@@ -17,7 +17,10 @@ const Classes = () => {
           : (approveclass.map(ac =>
             <CardClasses ac={ac} key={ac._id} ></CardClasses>
           ))
-        }</div>
+        }
+        
+        </div>
+        
     </div>
   );
 };

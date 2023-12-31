@@ -1,16 +1,13 @@
-import { FaBandcamp, FaHome, FaPlusCircle, FaSave, FaUser, FaUserAlt } from 'react-icons/fa';
+import { FaAddressBook, FaBandcamp, FaHome, FaPlusCircle, FaSave, FaUser, FaUserAlt } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 import useADmin from '../Hooks/useADmin';
 import useInstructor from '../Hooks/useInstructor';
 import img from '../../public/world.png'
-import useUserInfo from '../Hooks/useUser';
+
 
 const Dashboard = () => {
-
   let [isadmin] = useADmin();
   let [isInstructor] = useInstructor()
-  let [Userinfo] = useUserInfo()
-
   return (
     <div>
       <div className="drawer lg:drawer-open ">
@@ -25,17 +22,17 @@ const Dashboard = () => {
 
           <ul className="menu p-4 w-56 h-full text-white relative  ">
             <div className='avatar w-16 justify-center items-center mx-auto'>
-              <img src={img} alt="" srcset="" />
+              <img src={img} alt="g"  />
 
 
 
             </div>
             <h1 className='text-lg uppercase text-center font-bold pb-5'>Dashboard</h1>
+            <li><Link to='/dashboard/info'> <FaAddressBook /> Overview </Link></li>
             {
               isInstructor ?
 
                 <>
-                  <li><Link to='/dashboard/insinfo'> <FaHome /> Overview </Link></li>
                   <li><Link to='/dashboard/addclass'> <FaUser /> Add class</Link></li>
                   <li><Link to='/dashboard/myclass'> <FaBandcamp /> My  Classes</Link></li>
                 </> :
@@ -43,19 +40,14 @@ const Dashboard = () => {
 
                   <>
                     <li><Link to='/dashboard/users'> <FaUser /> All user</Link></li>
-
                     <li><Link to='/dashboard/manageClass'> <FaBandcamp />MAnage Classes</Link></li>
-
-
-
                   </>
-                  : Userinfo &&
+                  :
                   <>
-                    <li><Link to='/dashboard/info'> <FaUserAlt /> Your Info </Link></li>
                     <li><Link to='/dashboard/mySclass'> <FaPlusCircle /> My Selected Classes</Link></li>
-
                     <li><Link to='/dashboard/myEclass'> <FaSave /> My Enrolled Classes</Link></li>
                   </>
+
             }
 
 

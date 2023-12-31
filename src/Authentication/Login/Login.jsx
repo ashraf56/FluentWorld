@@ -65,6 +65,9 @@ const Login = () => {
         <div className="hero-content flex-col ">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+              <div>
+                <h1 className='font-bold text-center uppercase'>Log In now</h1>
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
