@@ -18,9 +18,9 @@ const Classes = () => {
             <CardClasses ac={ac} key={ac._id} ></CardClasses>
           ))
         }
-        
-        </div>
-        
+
+      </div>
+
     </div>
   );
 };

@@ -21,11 +21,11 @@ const FeatureClasses = () => {
             <CardClasses ac={ac} key={ac._id} ></CardClasses>
           ))
         }</div>
-     <div className='text-center my-5'>
-     <Link to={'/Classes'}>
-        <button className='btn transition duration-300 ease-in-out transform bg-gradient-to-tr from-[#3952f5]  to-[#fc4778] my-5 btn-md w-52 hover:from-[#fc4778] hover:to-[#3952f5]   border-0  text-white' >View All</button>
-      </Link>
-     </div>
+      <div className='text-center my-5'>
+        <Link to={'/Classes'}>
+          <button className='btn transition duration-300 ease-in-out transform bg-gradient-to-tr from-[#3952f5]  to-[#fc4778] my-5 btn-md w-52 hover:from-[#fc4778] hover:to-[#3952f5]   border-0  text-white' >View All</button>
+        </Link>
+      </div>
     </div>
   );
 };

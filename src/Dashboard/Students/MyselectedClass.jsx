@@ -13,7 +13,7 @@ const MyselectedClass = () => {
   //       let res= await axios.get(`https://fluent-world-server.vercel.app/cartClass/${user?.email}`)
   //       return res.data
   //           })
-  
+
   let deleteCArt = (cartclass) => {
     Swal.fire({
       title: 'Are you sure?',
