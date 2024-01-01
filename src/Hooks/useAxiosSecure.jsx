@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../AuthProvider/AuthProvider';
   let axiosguard = axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: 'https://fluent-world-server.vercel.app/',
   });
 const useAxiosSecure = () => {
   let navigate = useNavigate();
