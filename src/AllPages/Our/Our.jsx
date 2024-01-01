@@ -6,7 +6,7 @@ const Our = () => {
   return (
     <div className='relative'>
 
-      <div className="hero min-h-screen backdrop-blur-sm" >
+      <div className="hero p-5 backdrop-blur-sm" >
 
         <div className="hero-content flex-col lg:flex-row  ">
           <div className='w-full lg:w-3/6 max-w-full '>

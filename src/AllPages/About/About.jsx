@@ -4,7 +4,7 @@ const About = () => {
   let img = 'https://anschool.net/en/common/img/ikebukuro/slide02.jpg'
   return (
     <div>
-      <div className="hero w-full  min-h-screen p-5" style={{ backgroundImage: `url(${img})`, backgroundAttachment: 'fixed', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} >
+      <div className="hero w-full   p-5" style={{ backgroundImage: `url(${img})`, backgroundAttachment: 'fixed', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }} >
         <div className="hero-overlay bg-opacity-60   glass max-w-7xl lg:h-[600px] mx-auto"></div>
         <div className="hero-content text-center text-neutral-content">
 
