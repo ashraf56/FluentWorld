@@ -1,11 +1,13 @@
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { AuthService } from '../AuthProvider/AuthProvider';
   let axiosguard = axios.create({
-    baseURL: 'https://fluent-world-server.vercel.app/',
+    baseURL: 'http://localhost:3000/',
   });
 const useAxiosSecure = () => {
   let navigate = useNavigate();
+  let {Signout} = useContext(AuthService)
 
   useEffect(() => {
     axiosguard.interceptors.request.use((config) => {
@@ -19,6 +21,7 @@ const useAxiosSecure = () => {
       (response) => response,
       async (error) => {
         if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+          await Signout()
           navigate('/');
         }
         return Promise.reject(error);

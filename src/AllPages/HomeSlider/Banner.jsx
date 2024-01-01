@@ -5,12 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
   return (
-    <div className='relative' style={{ backgroundImage: `url(${imgs2})`, backgroundSize: 'cover' }}>
+    <div className='' style={{ backgroundImage: `url(${imgs2})`, backgroundSize: 'cover' }}>
 
       <div className="hero min-h-screen backdrop-blur-sm" >
-        <div className='absolute  left-1 top-20 backdrop-blur-xl blur-3xl glass'>
-          <img src={imgs1} className=' backdrop-blur-3xl glass w-80' />
-        </div>
+        
         <div className="hero-content flex-col-reverse lg:flex-row-reverse text-black">
           <img src={imgs1} className='  md:max-w-5xl' />
           <div>
