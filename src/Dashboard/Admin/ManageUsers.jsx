@@ -44,28 +44,26 @@ const ManageUsers = () => {
   return (
     <div>
       <h1 className='text-5xl font-bold text-center uppercase py-5' >Manage Role</h1>
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          <thead>
-            <tr>
-              <th>#
-              </th>
-              <th>Image</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Current Role</th>
-              <th>Action</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.length === 0 ?
-              <div className="col-span-3 flex justify-center items-center h-full">
-                <div className="w-max">
-                  <span className="loading loading-dots loading-lg"></span>
-                </div>
-              </div> :
-              users.map((user, index) => <tr key={user._id}>
+      {users.length === 0 ?
+        <div className='w-full  text-center mx-auto justify-center hero-content items-center'>
+          <span className="loading loading-ring loading-lg mx-auto justify-center items-center  "></span>
+        </div> :
+        <div className="overflow-x-auto">
+          <table className="table table-zebra">
+            <thead>
+              <tr>
+                <th>#
+                </th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Current Role</th>
+                <th>Action</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user, index) => <tr key={user._id}>
                 <th>{index + 1}</th>
                 <td>
                   <div className="avatar">
@@ -75,7 +73,7 @@ const ManageUsers = () => {
                   </div>
                 </td>
                 <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td className='text-sm'>{user.email}</td>
                 <td>{user.role}</td>
                 <td>
                   {user?.role === 'admin' ? <button className='btn btn-xs' disabled>Make Admin</button> : <button className='btn btn-xs' onClick={() => makeAdmin(user)} >Make Admin</button>}
@@ -87,11 +85,11 @@ const ManageUsers = () => {
                   {user?.role === 'admin' && user?.email == 'ashrafulfahim07@gmail.com' ? <button className='btn btn-xs disabled btn-neutral'>Remove</button> : <button className='btn btn-xs' onClick={() => reMoveUSer(user)} >Remove</button>}
                 </td>
               </tr>)
-            }
-          </tbody>
-        </table>
-        <Toaster></Toaster>
-      </div>
+              }
+            </tbody>
+          </table>
+          <Toaster></Toaster>
+        </div>}
     </div>
   );
 };

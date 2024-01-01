@@ -48,23 +48,25 @@ const MyselectedClass = () => {
     <div>
       <h1 className='text-5xl font-bold text-center uppercase py-5' > my Selected
         classes</h1>
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          <thead>
-            <tr>
-              <th>#
-              </th>
-              <th>Image</th>
-              <th> Instructor Name</th>
-              <th>Instructor Email</th>
-              <th>Class Name</th>
-              <th>Action</th>
-              <th>Payment</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              cartClass.map((cart, index) => <tr key={cart._id}>
+      {cartClass.length === 0 ? <div className='w-full  text-center mx-auto justify-center hero-content items-center'>
+        <span className="loading loading-ring loading-lg mx-auto justify-center items-center  "></span>
+      </div>
+        : <div className="overflow-x-auto">
+          <table className="table table-zebra">
+            <thead>
+              <tr>
+                <th>#
+                </th>
+                <th>Image</th>
+                <th> Instructor Name</th>
+                <th>Instructor Email</th>
+                <th>Class Name</th>
+                <th>Action</th>
+                <th>Payment</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartClass.map((cart, index) => <tr key={cart._id}>
                 <th>{index + 1}</th>
                 <td>
                   <div className="avatar">
@@ -83,10 +85,10 @@ const MyselectedClass = () => {
                   <button className='btn btn-xs btn-success text-white' >Pay</button>
                 </td>
               </tr>)
-            }
-          </tbody>
-        </table>
-      </div>
+              }
+            </tbody>
+          </table>
+        </div>}
     </div>
   );
 };

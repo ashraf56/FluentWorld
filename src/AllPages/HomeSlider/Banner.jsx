@@ -1,6 +1,6 @@
 import React from 'react';
 import imgs1 from '../../assets/9397253.png'
-import imgs2 from '../../assets/3d-background-with-white-cubes.jpg'
+import imgs2 from '../../assets/bannerbackground.jpg'
 import { Link } from 'react-router-dom';
 
 const Banner = () => {

@@ -43,12 +43,13 @@ const AddClass = () => {
     <div>
       <div className=" min-h-screen ">
         <div className="  justify-center items-center ">
-          <div>
-            <h1 className='uppercase font-bold text-lg '>Add a class</h1>
-          </div>
+
           <div className="card mx-auto max-w-xl shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body">
+                <div className='text-center'>
+                  <h1 className='uppercase font-bold text-lg '>Add a class</h1>
+                </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>

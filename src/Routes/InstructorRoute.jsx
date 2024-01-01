@@ -8,7 +8,7 @@ const InstructorRoute = ({ children }) => {
     let [isInstructor, Insloading] = useInstructor();
     let location = useLocation()
     if (Loading || Insloading) {
-        return <span className="loading loading-bars loading-lg"></span>
+        return <div className='text-center mx-auto justify-center '><span className="loading loading-ring loading-lg"></span></div>
     }
     if (user && isInstructor) {
         return children

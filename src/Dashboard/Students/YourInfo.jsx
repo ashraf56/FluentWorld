@@ -4,16 +4,18 @@ import useUser from '../../Hooks/useUser';
 const YourInfo = () => {
   let [userinfo] = useUser()
   let [cartClass] = useCartClass()
- 
-   return (
+  console.log(userinfo);
+  return (
     <div className=' '>
-     { !userinfo ? 'loading':
-     
-     <div className='max-w-full hero-content  grid grid-cols-1 '>
-        {
-          userinfo.map(({ _id, name, role, email, photoURL }) => (
+      {userinfo.length === 0 ? <div className='w-full text-center hero-content'>
+        <span className="loading loading-ring loading-md"></span>
+      </div> :
 
-            
+        <div className='max-w-full hero-content  grid grid-cols-1 '>
+          {
+            userinfo.map(({ _id, name, role, email, photoURL }) => (
+
+
               <div key={_id}>
                 <div className="alert w-full  shadow-lg" >
                   <div>
@@ -46,10 +48,10 @@ const YourInfo = () => {
                 </div>
 
 
-               
-                 </div>  ))
-        }
-      </div>}
+
+              </div>))
+          }
+        </div>}
     </div>
   );
 };

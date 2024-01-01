@@ -13,14 +13,18 @@ const Dashboard = () => {
       <div className="drawer lg:drawer-open ">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col px-6 mt-4">
-          <Outlet />
-          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+          <div>
+          <label htmlFor="my-drawer-2" className="btn  btn-md drawer-button bg-gradient-to-tr from-[#3952f5]  to-[#fc4778] text-white lg:hidden">
+            <FaHome></FaHome>
+          </label>
 
+          </div>
+<Outlet />
         </div>
-        <div className="drawer-side  bg-[#000000] min-h-full lg:min-h-0 ">
+        <div className="drawer-side   min-h-full lg:min-h-0 ">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
 
-          <ul className="menu p-4 w-56 h-full text-white relative  ">
+          <ul className="menu p-4 w-56 h-full bg-[#000000] text-white relative  ">
             <div className='avatar w-16 justify-center items-center mx-auto'>
               <img src={img} alt="g"  />
 

@@ -36,41 +36,44 @@ const MyenrolledClass = () => {
   return (
     <div>
       <h1 className='text-5xl font-bold text-center uppercase py-5' > My Enrolled Classes</h1>
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          <thead>
-            <tr>
-              <th>#
-              </th>
-              <th>Image</th>
-              <th> Instructor Name</th>
-              <th>Instructor Email</th>
-              <th>Class Name</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              cartClass.map((cart, index) => <tr key={cart._id}>
-                <th>{index + 1}</th>
-                <td>
-                  <div className="avatar">
-                    <div className="w-10 rounded-full">
-                      <img src={cart.image} />
-                    </div>
-                  </div>
-                </td>
-                <td>{cart.name}</td>
-                <td>{cart.email}</td>
-                <td>{cart.cname}</td>
-                <td>
-                  <button className='btn btn-xs' onClick={() => deleteCArt(cart)} >Delete</button>
-                </td>
-              </tr>)
-            }
-          </tbody>
-        </table>
+      {cartClass.length === 0 ? <div className='w-full  text-center mx-auto justify-center hero-content items-center'>
+        <span className="loading loading-ring loading-lg mx-auto justify-center items-center  "></span>
       </div>
+        : <div className="overflow-x-auto">
+          <table className="table table-zebra">
+            <thead>
+              <tr>
+                <th>#
+                </th>
+                <th>Image</th>
+                <th> Instructor Name</th>
+                <th>Instructor Email</th>
+                <th>Class Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                cartClass.map((cart, index) => <tr key={cart._id}>
+                  <th>{index + 1}</th>
+                  <td>
+                    <div className="avatar">
+                      <div className="w-10 rounded-full">
+                        <img src={cart.image} />
+                      </div>
+                    </div>
+                  </td>
+                  <td>{cart.name}</td>
+                  <td>{cart.email}</td>
+                  <td>{cart.cname}</td>
+                  <td>
+                    <button className='btn btn-xs' onClick={() => deleteCArt(cart)} >Delete</button>
+                  </td>
+                </tr>)
+              }
+            </tbody>
+          </table>
+        </div>}
     </div>
   );
 };
