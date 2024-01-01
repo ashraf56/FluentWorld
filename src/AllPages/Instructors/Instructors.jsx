@@ -12,7 +12,7 @@ const Instructors = () => {
       return res.data
     })
   return (
-    <div className='mb-11'>
+    <div className='mb-11 min-h-screen'>
       <h1 className='text-5xl font-bold text-center uppercase pt-8' >All Instructor</h1>
       <div className='grid md:grid-cols-2 lg:grid-cols-3 mx-12 gap-3 2xl:grid-cols-4 '>
         {instructors.length === 0 ? (

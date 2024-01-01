@@ -7,7 +7,9 @@ const YourInfo = () => {
  
    return (
     <div className=' '>
-     { userinfo && <div className='max-w-full hero-content  grid grid-cols-1 '>
+     { !userinfo ? 'loading':
+     
+     <div className='max-w-full hero-content  grid grid-cols-1 '>
         {
           userinfo.map(({ _id, name, role, email, photoURL }) => (
 
@@ -45,7 +47,7 @@ const YourInfo = () => {
 
 
                
-                 </div>))
+                 </div>  ))
         }
       </div>}
     </div>
