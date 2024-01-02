@@ -9,6 +9,7 @@ const Googleprovider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
     let [user, setuser] = useState()
     let [Loading, setLoading] = useState(true);
+    const [search, setSearch] = useState("");
     let RandonUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
@@ -51,7 +52,7 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
     let AuthManager = {
-        user, Loading, RandonUser, googleSignin, updateUser, Signout, Login,
+        user, Loading, RandonUser, googleSignin, updateUser, Signout, Login, search, setSearch
     }
     return (
         <AuthService.Provider value={AuthManager}>

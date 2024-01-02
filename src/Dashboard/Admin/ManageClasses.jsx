@@ -3,7 +3,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 
 const ManageClasses = () => {
-  let { data: allClass = [], refetch } = useQuery(
+  let { data: allClass = [], refetch, isLoading } = useQuery(
     ['classes'],
     async () => {
       let res = await axios.get('https://fluent-world-server.vercel.app/classes')
