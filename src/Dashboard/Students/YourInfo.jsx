@@ -24,9 +24,9 @@ const YourInfo = () => {
                   </div>
                 </div>
                 <div className="card bg-base-200 shadow-xl mt-5">
-                  <figure><img src={photoURL} alt="d" className='rounded-t-full w-80 ring-4 ring-zinc-900 max-w-full mt-5' /></figure>
+                  <figure><img src={photoURL} alt="d" className='rounded-t-full w-80 ring-4 ring-zinc-900 max-w-full mt-5 object-contain' /></figure>
                   <div className="card-body justify-center text-center">
-                    <h2 className=" font-extrabold text-5xl text-center">{name}</h2>
+                    <h2 className=" font-extrabold text-3xl text-center uppercase">{name}</h2>
                     <div>
                       <p className='font-bold'>{email}</p>
                       <p className='font-bold'>{role}</p>
