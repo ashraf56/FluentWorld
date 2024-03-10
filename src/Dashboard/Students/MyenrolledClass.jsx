@@ -2,40 +2,40 @@ import React from 'react';
 import useCartClass from '../../Hooks/useCartClass';
 
 const MyenrolledClass = () => {
-  let [cartClass, refetch] = useCartClass()
-  let deleteCArt = (cartclass) => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`https://fluent-world-server.vercel.app/cartClass/${cartclass._id}`,
-          {
-            method: "DELETE"
-          }
-        )
-          .then(rs => rs.json())
-          .then(data => {
-            if (data.deletedCount > 0) {
-              Swal.fire(
-                'Deleted!',
-                'Your Class has been deleted.',
-                'success'
-              )
-              refetch()
-            }
-          })
-      }
-    })
-  }
+  // let [cartClass, refetch] = useCartClass()
+  // let deleteCArt = (cartclass) => {
+  //   Swal.fire({
+  //     title: 'Are you sure?',
+  //     text: "You won't be able to revert this!",
+  //     icon: 'warning',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#3085d6',
+  //     cancelButtonColor: '#d33',
+  //     confirmButtonText: 'Yes, delete it!'
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       fetch(`https://fluent-world-server.vercel.app/cartClass/${cartclass._id}`,
+  //         {
+  //           method: "DELETE"
+  //         }
+  //       )
+  //         .then(rs => rs.json())
+  //         .then(data => {
+  //           if (data.deletedCount > 0) {
+  //             Swal.fire(
+  //               'Deleted!',
+  //               'Your Class has been deleted.',
+  //               'success'
+  //             )
+  //             refetch()
+  //           }
+  //         })
+  //     }
+  //   })
+  // }
   return (
     <div>
-      <h1 className='text-5xl font-bold text-center uppercase py-5' > My Enrolled Classes</h1>
+      {/* <h1 className='text-5xl font-bold text-center uppercase py-5' > My Enrolled Classes</h1>
       {cartClass.length === 0 ? <div className='w-full  text-center mx-auto justify-center hero-content items-center'>
         <span className="loading loading-ring loading-lg mx-auto justify-center items-center  "></span>
       </div>
@@ -73,7 +73,7 @@ const MyenrolledClass = () => {
               }
             </tbody>
           </table>
-        </div>}
+        </div>} */}
     </div>
   );
 };

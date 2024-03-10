@@ -7,7 +7,7 @@ import axios from 'axios';
 const useCartClass = () => {
   let { user } = useContext(AuthService)
   let [axiosguard] = useAxiosSecure();
-  const { refetch, data: cartClass = [] } = useQuery({
+  const { refetch, data: cartClass = [], isLoading } = useQuery({
     queryKey: ['cartClass', user?.email],
     enabled: !!user?.email && !!localStorage.getItem("summer-token"),
     queryFn: async () => {
@@ -15,6 +15,6 @@ const useCartClass = () => {
       return res.data;
     },
   })
-  return [cartClass, refetch]
+  return [cartClass, refetch,isLoading]
 };
 export default useCartClass;

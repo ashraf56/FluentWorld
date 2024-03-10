@@ -47,7 +47,7 @@ const Dashboard = () => {
                   :
                   <>
                     <li><Link to='/dashboard/mySclass'> <FaPlusCircle /> My Selected Classes</Link></li>
-                    <li><Link to='/dashboard/myEclass'> <FaSave /> My Enrolled Classes</Link></li>
+                    {/* <li><Link to='/dashboard/myEclass'> <FaSave /> My Enrolled Classes</Link></li> */}
                   </>
 
             }
