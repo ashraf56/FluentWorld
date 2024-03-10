@@ -22,7 +22,7 @@ const TopInstructor = () => {
             </div>
           ) : (topinstructor.slice(0, 6).map(tin =>
             <div key={tin._id} className="card card-side bg-base-100 shadow-xl h-full">
-              <figure><img src={tin.photoURL} className='h-full' /></figure>
+              <figure><img src={tin.photoURL} className='h-full rounded-r-2xl hover:ease-in hover:duration-[5s] hover:transition-all hover:rounded-e-full' /></figure>
               <div className="card-body">
                 <h2 className="card-title">{tin.name}</h2>
                 <p>{tin.role}</p>
