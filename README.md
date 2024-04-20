@@ -32,6 +32,7 @@ FluentWorld is a dynamic MERN Stack web application designed to empower language
 - vercel
 - imgbb
 - Vite
+- React Router
 
 # Demo
 - live link : https://summer-school-bfddb.web.app/
